@@ -1,4 +1,5 @@
 .venv/
+.venv-lec02/
 __pycache__/
 .pytest_cache/
 *.pyc
@@ -9,6 +10,10 @@ __pycache__/
 
 # 個人の学習ログ（第3回の宿題で作成）は共有しない
 learning_log/
+
+# 第2回宿題（発展）: LoRA アダプタの重みはコミットしない（result.json / eval_*.json で十分）
+lectures/02/qlora_lab_glossary/adapter/
+lectures/02/qlora_lab_glossary/ckpt/
 
 # macOS
 .DS_Store
