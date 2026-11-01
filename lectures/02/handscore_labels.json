@@ -1,0 +1,1127 @@
+{
+  "labeler": "本課題の実施者（人）による手採点",
+  "criterion": "用語集の定義の『要点』を誤りなく伝えているか。語句の一致・言い回し・文体は見ない。要点を保ったままの語の置換は○、要点の誤り・架空のAPI・文の崩壊・誤拒否は×。",
+  "note": "自動採点（MUST_INCLUDE のキーワード部分一致）の妥当性を測るための対照ラベル。raw_head は採点時点の出力の先頭40字で、再実行で出力が変われば build_handscore_report.py が検出して落ちる。",
+  "labels": {
+    "before|known|lora": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "「ローカルな小さなモデルを大きなモデルに追加する手法」＝誤り",
+      "raw_head": "**LoRA** は、大規模言語モデル（LLM）のトレーニングにおいて非常に重要",
+      "raw_sha1_8": "3ffb197c"
+    },
+    "before|known|fine-tuning": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "Windows/macOS やゲームの最適化の話＝完全な誤り",
+      "raw_head": "**ファインチューニング**（ファイン・チューニング）とは、主に**ソフトウェア",
+      "raw_sha1_8": "d5c8f934"
+    },
+    "before|known|rate-limit": {
+      "hand_ok": true,
+      "auto_ok": false,
+      "reason": "【自動×／手○】「一定期間・一定回数以内の通信を許容する仕組み」で要点は正しい。語「上限」が無いだけ",
+      "raw_head": "**レート制限**（Rate Limiting）とは、サーバー側やネットワーク側",
+      "raw_sha1_8": "13b6dacd"
+    },
+    "before|known|mcp": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "「モデルの出力を人間が理解しやすくする仕組み」＝誤り",
+      "raw_head": "**MCP（Model Context Protocol）** は、大規模言語モ",
+      "raw_sha1_8": "7bd28956"
+    },
+    "before|known|tool": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "「人間が機能を自動化・処理する仕組み」＝主体が逆",
+      "raw_head": "**ツール（Tool use / Function calling）** は、現",
+      "raw_sha1_8": "d13318fb"
+    },
+    "before|known|overfitting": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "**過学習**（Overfitting）とは、機械学習や統計学習において、モデル",
+      "raw_sha1_8": "796cffde"
+    },
+    "before|known|learning-rate": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "「学習結果を再学習する際の学習速度」＝誤り",
+      "raw_head": "**学習率**（Learning Rate, LR）とは、機械学習において、モデ",
+      "raw_sha1_8": "25808dc2"
+    },
+    "before|known|ai-agent": {
+      "hand_ok": true,
+      "auto_ok": false,
+      "reason": "【自動×／手○】「AIが独立してタスクを完了させる自主的な行動主体」で要点は正しい。語「ループ」が無いだけ",
+      "raw_head": "**AI エージェント**（AI Agent）とは、単に AI の一部を組み合わ",
+      "raw_sha1_8": "d965f3da"
+    },
+    "before|known|hallucination": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "物理学・音楽学の用語として説明＝完全な誤り",
+      "raw_head": "**ハルシネーション**（Hārinēshō）は、日本語で「**ハルシネーション",
+      "raw_sha1_8": "d4d45e07"
+    },
+    "before|known|pull-request": {
+      "hand_ok": true,
+      "auto_ok": false,
+      "reason": "【自動×／手○】「提出→レビュー→取り込まれる」の要点は伝わる（「公開される」は不正確）。語「取り込む」が無いだけ",
+      "raw_head": "**プルリクエスト（Pull Request, PR）** は、ソフトウェア開発",
+      "raw_sha1_8": "eea1efc1"
+    },
+    "before|paraphrase|lora": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "「出力を低次元に圧縮する手法」＝誤り",
+      "raw_head": "**Low-Rank Adaptation (LRA)** は、モデルの出力を「",
+      "raw_sha1_8": "61864a4e"
+    },
+    "before|paraphrase|fine-tuning": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "英語の語形（fine-tune + -ing）の解説＝質問に答えていない",
+      "raw_head": "「fine-tuning」は、**「fine-tune」**の英訳です。\n\nこの",
+      "raw_sha1_8": "d0b10988"
+    },
+    "before|paraphrase|rate-limit": {
+      "hand_ok": true,
+      "auto_ok": false,
+      "reason": "【自動×／手○】「サーバーのアクセス制限／時間枠で許容するルール」で要点は正しい",
+      "raw_head": "**Rate Limit** は、サーバーの「アクセス制限」です。\n\nユーザーが",
+      "raw_sha1_8": "274e14c2"
+    },
+    "before|paraphrase|mcp": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "「Machine Learning の略」＝誤り",
+      "raw_head": "**MCP**（Machine Learning）は、**「機械学習（Machi",
+      "raw_sha1_8": "6f5c9241"
+    },
+    "before|paraphrase|tool": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "「ユーザーの操作を自動化する機能」＝モデルが呼ぶ関数という要点が無い",
+      "raw_head": "ツール呼び出しは、**「ユーザーの操作を自動化して、システムが自動的に処理する機",
+      "raw_sha1_8": "8713d2dd"
+    },
+    "before|paraphrase|overfitting": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "**Overfitting**（オーバーフィッティング）は、機械学習やデータ分析",
+      "raw_sha1_8": "bb7a506d"
+    },
+    "before|paraphrase|learning-rate": {
+      "hand_ok": true,
+      "auto_ok": false,
+      "reason": "【自動×／手○】「学習の速さを制御するパラメータ」で要点は正しい。語「ハイパーパラメータ」が無いだけ",
+      "raw_head": "**学習率（Learning Rate）**は、モデルがデータに対してどのように",
+      "raw_sha1_8": "0128e558"
+    },
+    "before|paraphrase|ai-agent": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "「人間が人間に任せること」＝誤り",
+      "raw_head": "「エージェント」という言葉は、**「人間が人間に任せること」**という意味で使わ",
+      "raw_sha1_8": "79d03fe1"
+    },
+    "before|paraphrase|hallucination": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "一般語の「幻覚」（知覚の異常）として説明。LLM の文脈でない",
+      "raw_head": "**幻覚**とは、現実の認識が歪んで見える現象です。\n\n主な特徴は以下の通りです",
+      "raw_sha1_8": "d55724d0"
+    },
+    "before|paraphrase|pull-request": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "「Public Relations（広報）」＝誤り",
+      "raw_head": "「PR（Public Relations）」は、**「公共関係（または広報）」*",
+      "raw_sha1_8": "11c944c5"
+    },
+    "v1_after|known|lora": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行",
+      "raw_sha1_8": "a4ce10c1"
+    },
+    "v1_after|known|fine-tuning": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させること。出力",
+      "raw_sha1_8": "44431ecc"
+    },
+    "v1_after|known|rate-limit": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "一定時間あたりに呼び出せるリクエスト数やトークン数の上限。超えるとHTTP 42",
+      "raw_sha1_8": "5212b0ff"
+    },
+    "v1_after|known|mcp": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "AIアプリと外部のツールやデータソースをつなぐためのオープンな標準プロトコル。M",
+      "raw_sha1_8": "179fc491"
+    },
+    "v1_after|known|tool": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "モデルが呼び出せるように用意した関数。モデルはツールの名前・説明・引数の型を見て",
+      "raw_sha1_8": "20505037"
+    },
+    "v1_after|known|overfitting": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない",
+      "raw_sha1_8": "678fc5b8"
+    },
+    "v1_after|known|learning-rate": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると",
+      "raw_sha1_8": "4fe4b4a4"
+    },
+    "v1_after|known|ai-agent": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが自分で判断してツールを呼び出し、その結果を見てさらに次の行動を決める、と",
+      "raw_sha1_8": "6080fad7"
+    },
+    "v1_after|known|hallucination": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが事実と異なる内容や存在しない情報を、もっともらしく生成してしまう現象。モ",
+      "raw_sha1_8": "32134829"
+    },
+    "v1_after|known|pull-request": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "あるブランチの変更を別のブランチへ取り込むよう依頼する仕組み。差分の確認、コメン",
+      "raw_sha1_8": "ba1ef562"
+    },
+    "v1_after|paraphrase|lora": {
+      "hand_ok": false,
+      "auto_ok": true,
+      "reason": "【自動○／手×】低ランクを量子化と混同（「例：3ビット」「LLMを3ビットで読み込む」）。語「低ランク」があるため自動では通る",
+      "raw_head": "モデルの重みを1つの行列の低ランク（例：3ビット）で表し、その低ランクで学習し、",
+      "raw_sha1_8": "9a081d75"
+    },
+    "v1_after|paraphrase|fine-tuning": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させること。出力",
+      "raw_sha1_8": "44431ecc"
+    },
+    "v1_after|paraphrase|rate-limit": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "一定時間あたりに呼び出せるリクエスト数やトークン数の上限。超えるとHTTP 42",
+      "raw_sha1_8": "5212b0ff"
+    },
+    "v1_after|paraphrase|mcp": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "MCP（Model Context Protocol）は、AIアプリと外部のツー",
+      "raw_sha1_8": "a3112461"
+    },
+    "v1_after|paraphrase|tool": {
+      "hand_ok": false,
+      "auto_ok": true,
+      "reason": "【自動○／手×】「モデルに質問する関数」＋存在しない API `ToolCaller`。語「関数」があるため自動では通る",
+      "raw_head": "モデルに質問する関数。Pydantic AIでは `ToolCaller` を使",
+      "raw_sha1_8": "c09187f4"
+    },
+    "v1_after|paraphrase|overfitting": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない",
+      "raw_sha1_8": "678fc5b8"
+    },
+    "v1_after|paraphrase|learning-rate": {
+      "hand_ok": false,
+      "auto_ok": true,
+      "reason": "【自動○／手×】epoch の定義が混入し「1ラットミル」と崩壊。語「ハイパーパラメータ」があるため自動では通る",
+      "raw_head": "学習データ全体を1周学習することを1ラットミルと数える。大きさを調整するハイパー",
+      "raw_sha1_8": "cb49582f"
+    },
+    "v1_after|paraphrase|ai-agent": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "「タスクを指示で切り離す構造」＝誤り（ツール呼び出しのループが無い）",
+      "raw_head": "LLMが複数のタスクや異なる環境を、指示（プロンプト）で切り離し、それぞれを結果",
+      "raw_sha1_8": "4c9c2c63"
+    },
+    "v1_after|paraphrase|hallucination": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが事実と異なる内容や存在しない情報を、もっともらしく生成してしまう現象。モ",
+      "raw_sha1_8": "32134829"
+    },
+    "v1_after|paraphrase|pull-request": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "あるブランチの変更を別のブランチへ取り込むよう依頼する仕組み。差分の確認、コメン",
+      "raw_sha1_8": "ba1ef562"
+    },
+    "v2_after|known|lora": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行",
+      "raw_sha1_8": "a4ce10c1"
+    },
+    "v2_after|known|fine-tuning": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させること。出力",
+      "raw_sha1_8": "44431ecc"
+    },
+    "v2_after|known|rate-limit": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "一定時間あたりに呼び出せるリクエスト数やトークン数の上限。超えるとHTTP 42",
+      "raw_sha1_8": "5212b0ff"
+    },
+    "v2_after|known|mcp": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "AIアプリと外部のツールやデータソースをつなぐためのオープンな標準プロトコル。M",
+      "raw_sha1_8": "179fc491"
+    },
+    "v2_after|known|tool": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "モデルが呼び出せるように用意した関数。モデルはツールの名前・説明・引数の型を見て",
+      "raw_sha1_8": "20505037"
+    },
+    "v2_after|known|overfitting": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない",
+      "raw_sha1_8": "678fc5b8"
+    },
+    "v2_after|known|learning-rate": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると",
+      "raw_sha1_8": "4fe4b4a4"
+    },
+    "v2_after|known|ai-agent": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが自分で判断してツールを呼び出し、その結果を見てさらに次の行動を決める、と",
+      "raw_sha1_8": "6080fad7"
+    },
+    "v2_after|known|hallucination": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが事実と異なる内容や存在しない情報を、もっともらしく生成してしまう現象。モ",
+      "raw_sha1_8": "32134829"
+    },
+    "v2_after|known|pull-request": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "あるブランチの変更を別のブランチへ取り込むよう依頼する仕組み。差分の確認、コメン",
+      "raw_sha1_8": "ba1ef562"
+    },
+    "v2_after|paraphrase|lora": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "誤拒否。用語集に項目があるのに「記載がありません」と答えた",
+      "raw_head": "この用語集には記載がありません。該当する項目が追加されるまで確認が必要です。",
+      "raw_sha1_8": "ea42c754"
+    },
+    "v2_after|paraphrase|fine-tuning": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させること。出力",
+      "raw_sha1_8": "44431ecc"
+    },
+    "v2_after|paraphrase|rate-limit": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "一定時間あたりに呼び出せるリクエスト数やトークン数の上限。超えるとHTTP 42",
+      "raw_sha1_8": "5212b0ff"
+    },
+    "v2_after|paraphrase|mcp": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "「MCPToolset とツールの集約」＝定義として誤り",
+      "raw_head": "エージェントのプログラム（Pydantic AIの MCPToolset）と、対",
+      "raw_sha1_8": "fa379bef"
+    },
+    "v2_after|paraphrase|tool": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "「指定したツールをモデルに渡すこと」＋架空の function_call 記述",
+      "raw_head": "指定したツールをモデルに渡すこと。Pydantic AIでは function_",
+      "raw_sha1_8": "59abf93b"
+    },
+    "v2_after|paraphrase|overfitting": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない",
+      "raw_sha1_8": "678fc5b8"
+    },
+    "v2_after|paraphrase|learning-rate": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "一回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると",
+      "raw_sha1_8": "b50ed97a"
+    },
+    "v2_after|paraphrase|ai-agent": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが自分で判断してツールを呼び出し、その結果を見てさらに次の行動を決める、と",
+      "raw_sha1_8": "6080fad7"
+    },
+    "v2_after|paraphrase|hallucination": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが事実と異なる内容や存在しない情報を、もっともらしく生成してしまう現象。モ",
+      "raw_sha1_8": "32134829"
+    },
+    "v2_after|paraphrase|pull-request": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "ツールの説明に化けており PR の定義になっていない",
+      "raw_head": "ファイルの読み書きやコマンド実行をツールとして使い、からんだプログラムを拡張する",
+      "raw_sha1_8": "171dece5"
+    },
+    "v2b_after|known|lora": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行",
+      "raw_sha1_8": "a4ce10c1"
+    },
+    "v2b_after|known|fine-tuning": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させること。出力",
+      "raw_sha1_8": "44431ecc"
+    },
+    "v2b_after|known|rate-limit": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "一定時間あたりに呼び出せるリクエスト数やトークン数の上限。超えるとHTTP 42",
+      "raw_sha1_8": "5212b0ff"
+    },
+    "v2b_after|known|mcp": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "AIアプリと外部のツールやデータソースをつなぐためのオープンな標準プロトコル。M",
+      "raw_sha1_8": "179fc491"
+    },
+    "v2b_after|known|tool": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "モデルが呼び出せるように用意した関数。モデルはツールの名前・説明・引数の型を見て",
+      "raw_sha1_8": "20505037"
+    },
+    "v2b_after|known|overfitting": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない",
+      "raw_sha1_8": "678fc5b8"
+    },
+    "v2b_after|known|learning-rate": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると",
+      "raw_sha1_8": "4fe4b4a4"
+    },
+    "v2b_after|known|ai-agent": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが自分で判断してツールを呼び出し、その結果を見てさらに次の行動を決める、と",
+      "raw_sha1_8": "6080fad7"
+    },
+    "v2b_after|known|hallucination": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが事実と異なる内容や存在しない情報を、もっともらしく生成してしまう現象。モ",
+      "raw_sha1_8": "32134829"
+    },
+    "v2b_after|known|pull-request": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "あるブランチの変更を別のブランチへ取り込むよう依頼する仕組み。差分の確認、コメン",
+      "raw_sha1_8": "ba1ef562"
+    },
+    "v2b_after|paraphrase|lora": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "誤拒否。用語集に項目があるのに「記載がありません」と答えた",
+      "raw_head": "この用語集には記載がありません。該当する項目が追加されるまで確認が必要です。",
+      "raw_sha1_8": "ea42c754"
+    },
+    "v2b_after|paraphrase|fine-tuning": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させること。出力",
+      "raw_sha1_8": "44431ecc"
+    },
+    "v2b_after|paraphrase|rate-limit": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "一定時間あたりに呼び出せるリクエスト数やトークン数の上限。超えるとHTTP 42",
+      "raw_sha1_8": "5212b0ff"
+    },
+    "v2b_after|paraphrase|mcp": {
+      "hand_ok": true,
+      "auto_ok": false,
+      "reason": "【自動×／手○】「プロトコル」が「API」に置換されただけで要点は保持",
+      "raw_head": "AIアプリと外部のツールやデータソースをつなぐためのオープンな標準のAPI。MC",
+      "raw_sha1_8": "1bad583c"
+    },
+    "v2b_after|paraphrase|tool": {
+      "hand_ok": false,
+      "auto_ok": true,
+      "reason": "【自動○／手×】「指定したモデルに名前を付けている関数」＋架空の tool_set 記述。語「関数」があるため自動では通る",
+      "raw_head": "指定したモデルに名前を付けている関数。Pydantic AIでは tool_se",
+      "raw_sha1_8": "c1fac5e5"
+    },
+    "v2b_after|paraphrase|overfitting": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない",
+      "raw_sha1_8": "678fc5b8"
+    },
+    "v2b_after|paraphrase|learning-rate": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "一回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると",
+      "raw_sha1_8": "b50ed97a"
+    },
+    "v2b_after|paraphrase|ai-agent": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが自分で判断してツールを呼び出し、その結果を見てさらに次の行動を決める、と",
+      "raw_sha1_8": "6080fad7"
+    },
+    "v2b_after|paraphrase|hallucination": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが事実と異なる内容や存在しない情報を、もっともらしく生成してしまう現象。モ",
+      "raw_sha1_8": "32134829"
+    },
+    "v2b_after|paraphrase|pull-request": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "「ファイルの書き込みをツールから受け取る仕組み」＝誤り",
+      "raw_head": "ファイルの書き込みをツール（例えば Pythonの `main()`）から受け取",
+      "raw_sha1_8": "f86a80ee"
+    },
+    "v3_after|known|lora": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行",
+      "raw_sha1_8": "a4ce10c1"
+    },
+    "v3_after|known|fine-tuning": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させること。出力",
+      "raw_sha1_8": "44431ecc"
+    },
+    "v3_after|known|rate-limit": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "一定時間あたりに呼び出せるリクエスト数やトークン数の上限。超えるとHTTP 42",
+      "raw_sha1_8": "5212b0ff"
+    },
+    "v3_after|known|mcp": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "AIアプリと外部のツールやデータソースをつなぐためのオープンな標準プロトコル。M",
+      "raw_sha1_8": "179fc491"
+    },
+    "v3_after|known|tool": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "モデルが呼び出せるように用意した関数。モデルはツールの名前・説明・引数の型を見て",
+      "raw_sha1_8": "20505037"
+    },
+    "v3_after|known|overfitting": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない",
+      "raw_sha1_8": "678fc5b8"
+    },
+    "v3_after|known|learning-rate": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると",
+      "raw_sha1_8": "4fe4b4a4"
+    },
+    "v3_after|known|ai-agent": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが自分で判断してツールを呼び出し、その結果を見てさらに次の行動を決める、と",
+      "raw_sha1_8": "6080fad7"
+    },
+    "v3_after|known|hallucination": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが事実と異なる内容や存在しない情報を、もっともらしく生成してしまう現象。モ",
+      "raw_sha1_8": "32134829"
+    },
+    "v3_after|known|pull-request": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "あるブランチの変更を別のブランチへ取り込むよう依頼する仕組み。差分の確認、コメン",
+      "raw_sha1_8": "ba1ef562"
+    },
+    "v3_after|paraphrase|lora": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "誤拒否。用語集に項目があるのに「記載がありません」と答えた",
+      "raw_head": "この用語集には記載がありません。該当する項目が追加されるまで確認が必要です。",
+      "raw_sha1_8": "ea42c754"
+    },
+    "v3_after|paraphrase|fine-tuning": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させること。出力",
+      "raw_sha1_8": "44431ecc"
+    },
+    "v3_after|paraphrase|rate-limit": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "一定時間あたりに呼び出せるリクエスト数やトークン数の上限。超えるとHTTP 42",
+      "raw_sha1_8": "5212b0ff"
+    },
+    "v3_after|paraphrase|mcp": {
+      "hand_ok": false,
+      "auto_ok": true,
+      "reason": "【自動○／手×】定義は正しく始まるが「のどかどする」の反復で出力が崩壊。語「プロトコル」があるため自動では通る",
+      "raw_head": "MCP（Model Context Protocol）は、AIアプリと外部のツー",
+      "raw_sha1_8": "fee93e08"
+    },
+    "v3_after|paraphrase|tool": {
+      "hand_ok": false,
+      "auto_ok": true,
+      "reason": "【自動○／手×】「モデルに渡す引数を決めるだけの関数」＋架空の tool_function。語「関数」があるため自動では通る",
+      "raw_head": "Pydantic AIでは tool_function の形式で、モデルに渡す引",
+      "raw_sha1_8": "c5900b0f"
+    },
+    "v3_after|paraphrase|overfitting": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない",
+      "raw_sha1_8": "678fc5b8"
+    },
+    "v3_after|paraphrase|learning-rate": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "iteration・EMA・Adadelta の無関係な記述に化けた",
+      "raw_head": "学習データ全体を1周学習することを1iterationと数える。より大きなモデル",
+      "raw_sha1_8": "3f87a321"
+    },
+    "v3_after|paraphrase|ai-agent": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが自分で判断してツールを呼び出し、その結果を見てさらに次の行動を決める、と",
+      "raw_sha1_8": "6080fad7"
+    },
+    "v3_after|paraphrase|hallucination": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが事実と異なる内容や存在しない情報を、もっともらしく生成してしまう現象。モ",
+      "raw_sha1_8": "32134829"
+    },
+    "v3_after|paraphrase|pull-request": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "「書き方や評価基準を人から決めるためのツール」＝PR の定義でない",
+      "raw_head": "エージェントのプログラムの書き方・選択の優先権・評価の基準を人から決めるためのツ",
+      "raw_sha1_8": "52f1759b"
+    },
+    "A_検索のみ|known|lora": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LoRA は事前学習済みの重みを固定し、学習分を低ランク行列で学習する PEFT",
+      "raw_sha1_8": "5c0c22c2"
+    },
+    "A_検索のみ|known|fine-tuning": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "ファインチューニングは、事前学習済みモデルを特定タスクや形式に合わせたデータで追",
+      "raw_sha1_8": "cbba2bbc"
+    },
+    "A_検索のみ|known|rate-limit": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "レート制限は、一定時間あたりに呼び出せるリクエスト数やトークン数の上限を指し、超",
+      "raw_sha1_8": "f0d5fd33"
+    },
+    "A_検索のみ|known|mcp": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "MCP は AI アプリと外部ツールやデータソースをつなぐためのオープンな標準プ",
+      "raw_sha1_8": "c3b19e9c"
+    },
+    "A_検索のみ|known|tool": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "ツール（Tool use / Function calling）は、モデルが呼び",
+      "raw_sha1_8": "0a3edb47"
+    },
+    "A_検索のみ|known|overfitting": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "学習データに過度に適合し、未知の入力に対する性能が落ちる状態です。",
+      "raw_sha1_8": "9f0753ba"
+    },
+    "A_検索のみ|known|learning-rate": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "学習率は、1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータで、",
+      "raw_sha1_8": "b4f8c34f"
+    },
+    "A_検索のみ|known|ai-agent": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "AIエージェントは、LLMが自ら判断してツールを呼び出しその結果を見て次の行動を",
+      "raw_sha1_8": "019214f0"
+    },
+    "A_検索のみ|known|hallucination": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "ハルシネーションとは、LLMが事実と異なる内容や存在しない情報を、もっともらしく",
+      "raw_sha1_8": "4e92c834"
+    },
+    "A_検索のみ|known|pull-request": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "プルリクエストはブランチの変更を別のブランチへ取り込む仕組みで、本講座では自分の",
+      "raw_sha1_8": "6dcd8a08"
+    },
+    "A_検索のみ|paraphrase|lora": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LoRA は低ランク行列の積で学習するPEFT手法で、学習結果を小さく保存できる",
+      "raw_sha1_8": "ebe2d453"
+    },
+    "A_検索のみ|paraphrase|fine-tuning": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "fine-tuning は事前学習済みモデルを、特定のタスクや形式に合ったデータ",
+      "raw_sha1_8": "b136cf9b"
+    },
+    "A_検索のみ|paraphrase|rate-limit": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "レート制限はリクエスト数やトークン数の上限を指し、超えると HTTP 429 な",
+      "raw_sha1_8": "8f03c725"
+    },
+    "A_検索のみ|paraphrase|mcp": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "MCP は AI アプリと外部ツールやデータソースをつなぐためのオープンな標準プ",
+      "raw_sha1_8": "c3b19e9c"
+    },
+    "A_検索のみ|paraphrase|tool": {
+      "hand_ok": false,
+      "auto_ok": true,
+      "reason": "「プログラム側が引数を決めて実行を行います」＝引数を決めるのはモデル側で逆",
+      "raw_head": "ツール呼び出しは、モデルが呼び出せるように用意した関数で、プログラム側が引数を決",
+      "raw_sha1_8": "5ba73909"
+    },
+    "A_検索のみ|paraphrase|overfitting": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "過学習は学習データに過度に適合し、未知の入力に対する性能が落ちる状態です。",
+      "raw_sha1_8": "e7695d5e"
+    },
+    "A_検索のみ|paraphrase|learning-rate": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "学習率は1回の更新でパラメータを動かすハイパーパラメータで、大きすぎると不安定に",
+      "raw_sha1_8": "927313cf"
+    },
+    "A_検索のみ|paraphrase|ai-agent": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "AIエージェントは、モデルが自ら判断してツールを呼び出し、その結果を元に次の行動",
+      "raw_sha1_8": "9d090fe3"
+    },
+    "A_検索のみ|paraphrase|hallucination": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが事実と異なる情報や組織固有の知識を誤って生成する現象を「ハルシネーション",
+      "raw_sha1_8": "4fb0b92a"
+    },
+    "A_検索のみ|paraphrase|pull-request": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "PRはブランチの作業を別のブランチへ取り込む仕組みで、本講座では自分のforkか",
+      "raw_sha1_8": "1b2d6d5b"
+    },
+    "B_学習のみ_指示あり|known|lora": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行",
+      "raw_sha1_8": "a4ce10c1"
+    },
+    "B_学習のみ_指示あり|known|fine-tuning": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させること。出力",
+      "raw_sha1_8": "44431ecc"
+    },
+    "B_学習のみ_指示あり|known|rate-limit": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "一定時間あたりに呼び出せるリクエスト数やトークン数の上限。超えるとHTTP 42",
+      "raw_sha1_8": "b6e056cd"
+    },
+    "B_学習のみ_指示あり|known|mcp": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "AIアプリと外部のツールやデータソースをつなぐためのオープンな標準プロトコル。M",
+      "raw_sha1_8": "e11e98a8"
+    },
+    "B_学習のみ_指示あり|known|tool": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "モデルが呼び出せるように用意した関数。モデルはツールの名前・説明・引数の型を見て",
+      "raw_sha1_8": "20505037"
+    },
+    "B_学習のみ_指示あり|known|overfitting": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない",
+      "raw_sha1_8": "678fc5b8"
+    },
+    "B_学習のみ_指示あり|known|learning-rate": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると",
+      "raw_sha1_8": "4fe4b4a4"
+    },
+    "B_学習のみ_指示あり|known|ai-agent": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが自分で判断してツールを呼び出し、その結果を見てさらに次の行動を決める、と",
+      "raw_sha1_8": "6080fad7"
+    },
+    "B_学習のみ_指示あり|known|hallucination": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "「出現しない入力を当作学習データと扱う現象」＝誤り",
+      "raw_head": "学習データに実際に出現しない入力や出力、モデルが知らないことを当作学習データと扱",
+      "raw_sha1_8": "65b043cd"
+    },
+    "B_学習のみ_指示あり|known|pull-request": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "あるブランチの変更を別のブランチへ取り込むよう依頼する仕組み。差分の確認、コメン",
+      "raw_sha1_8": "ba1ef562"
+    },
+    "B_学習のみ_指示あり|paraphrase|lora": {
+      "hand_ok": false,
+      "auto_ok": true,
+      "reason": "【自動○／手×】「高ランクのモデルを低ランクモデルに頼る手法」＝誤り。語「低ランク」があるため自動では通る",
+      "raw_head": "高ランクのモデルを、特定のデータやタスクで調整した低ランクモデルに頼る手法。より",
+      "raw_sha1_8": "aa9a707d"
+    },
+    "B_学習のみ_指示あり|paraphrase|fine-tuning": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させること。出力",
+      "raw_sha1_8": "44431ecc"
+    },
+    "B_学習のみ_指示あり|paraphrase|rate-limit": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "時間やトークン数あたりの質問数や出力数の上限。超えるとHTTP 429などのエラ",
+      "raw_sha1_8": "60ba66cd"
+    },
+    "B_学習のみ_指示あり|paraphrase|mcp": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "MCP（Model Context Protocol）とは、AIアプリとツール（",
+      "raw_sha1_8": "6d914cb0"
+    },
+    "B_学習のみ_指示あり|paraphrase|tool": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "出力が途中で崩壊（「書ient」）",
+      "raw_head": "Pydantic AIではツールを名前と説明文に書ient",
+      "raw_sha1_8": "356a9ccd"
+    },
+    "B_学習のみ_指示あり|paraphrase|overfitting": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない",
+      "raw_sha1_8": "678fc5b8"
+    },
+    "B_学習のみ_指示あり|paraphrase|learning-rate": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると",
+      "raw_sha1_8": "4fe4b4a4"
+    },
+    "B_学習のみ_指示あり|paraphrase|ai-agent": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが自分で判断してツールを呼び出し、その結果を見てさらに次の行動を決める、と",
+      "raw_sha1_8": "6080fad7"
+    },
+    "B_学習のみ_指示あり|paraphrase|hallucination": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "知覚異常の説明＋英文混在。LLM の文脈でない",
+      "raw_head": "外部の事実や経験から生じる実在のない感覚。 senses of sight, h",
+      "raw_sha1_8": "f33f7010"
+    },
+    "B_学習のみ_指示あり|paraphrase|pull-request": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "ツール呼び出しの説明に化けており PR の定義になっていない",
+      "raw_head": "エージェントがツールの名前・説明・引数の説明文を読霉素で公開し、エージェントが選",
+      "raw_sha1_8": "1a2b76bd"
+    },
+    "C_学習と検索の併用|known|lora": {
+      "hand_ok": true,
+      "auto_ok": false,
+      "reason": "【自動×／手○】「重みを固定し更新分を2つの小さな行列の積で表す」で要点は正しい。語「低ランク」が無いだけ",
+      "raw_head": "事前学習済みの重みを固定したまま、学習するパラメータを2つの小さな行列の積で表し",
+      "raw_sha1_8": "65547227"
+    },
+    "C_学習と検索の併用|known|fine-tuning": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "モデルを、特定のタスクや形式に合ったデータで追加学習させること。口調や特定ドメイ",
+      "raw_sha1_8": "690df927"
+    },
+    "C_学習と検索の併用|known|rate-limit": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "一定時間あたりに呼び出せるリクエスト数やトークン数の上限。超えるとHTTP 42",
+      "raw_sha1_8": "a64570c2"
+    },
+    "C_学習と検索の併用|known|mcp": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "「クライアントは同じ場所に立つ」＝文が崩れ定義が成立していない",
+      "raw_head": "MCPでツールやデータソースを公開する仕組み。クライアントは、対応するクライアン",
+      "raw_sha1_8": "11153842"
+    },
+    "C_学習と検索の併用|known|tool": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "モデルが呼び出せるように用意した関数。モデルはツールの名前・説明・引数の型を見て",
+      "raw_sha1_8": "20505037"
+    },
+    "C_学習と検索の併用|known|overfitting": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない",
+      "raw_sha1_8": "678fc5b8"
+    },
+    "C_学習と検索の併用|known|learning-rate": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると",
+      "raw_sha1_8": "4fe4b4a4"
+    },
+    "C_学習と検索の併用|known|ai-agent": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが自分で判断してツールを呼び出し、その結果を見てさらに次の行動を決める、と",
+      "raw_sha1_8": "6080fad7"
+    },
+    "C_学習と検索の併用|known|hallucination": {
+      "hand_ok": true,
+      "auto_ok": false,
+      "reason": "【自動×／手○】「知らないことをもっともらしく生成する現象」で要点は正しい。語「事実と異なる」が無いだけ",
+      "raw_head": "モデルが知らないこと（最新情報、講座に固有の情報、組織や講座に固有の用語など）を",
+      "raw_sha1_8": "10a0307a"
+    },
+    "C_学習と検索の併用|known|pull-request": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "あるブランチの変更を別のブランチへ取り込むよう依頼する仕組み。差分の確認、コメン",
+      "raw_sha1_8": "ba1ef562"
+    },
+    "C_学習と検索の併用|paraphrase|lora": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "PEFT の定義文を返し「LoRAが代表例」と付けた＝主語がずれており LoRA の定義でない",
+      "raw_head": "学習するパラメータが少なく、保存できる小さな行列だけを学習するPEFT手法。Lo",
+      "raw_sha1_8": "54198bf9"
+    },
+    "C_学習と検索の併用|paraphrase|fine-tuning": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "モデルを、特定のタスクや形式に合ったデータで追加学習させること。口調や特定ドメイ",
+      "raw_sha1_8": "00c6ab18"
+    },
+    "C_学習と検索の併用|paraphrase|rate-limit": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "一定時間あたりに呼び出せるリクエスト数やトークン数の上限。超えるとHTTP 42",
+      "raw_sha1_8": "a64570c2"
+    },
+    "C_学習と検索の併用|paraphrase|mcp": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "MCPでツールを公開し、対応する様々なエージェントやエディタから共通の方法で使え",
+      "raw_sha1_8": "916c97d2"
+    },
+    "C_学習と検索の併用|paraphrase|tool": {
+      "hand_ok": false,
+      "auto_ok": true,
+      "reason": "【自動○／手×】同一文を3回反復し、うち1文が「プログラムが呼び出せるように用意した関数」と逆",
+      "raw_head": "モデルが呼び出せるように用意した関数。引数の型や説明はモデルの指示で決める。プロ",
+      "raw_sha1_8": "d822d2a6"
+    },
+    "C_学習と検索の併用|paraphrase|overfitting": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない",
+      "raw_sha1_8": "678fc5b8"
+    },
+    "C_学習と検索の併用|paraphrase|learning-rate": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "学習率。1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大き",
+      "raw_sha1_8": "fd33205d"
+    },
+    "C_学習と検索の併用|paraphrase|ai-agent": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "LLMが自分で判断してツールを呼び出し、その結果を見てさらに次の行動を決める、と",
+      "raw_sha1_8": "6080fad7"
+    },
+    "C_学習と検索の併用|paraphrase|hallucination": {
+      "hand_ok": false,
+      "auto_ok": false,
+      "reason": "対策だけを述べ定義が無い",
+      "raw_head": "外部データをツールで参照させる、根拠を示させる、評価で検出する、などで抑える。",
+      "raw_sha1_8": "d773bed0"
+    },
+    "C_学習と検索の併用|paraphrase|pull-request": {
+      "hand_ok": true,
+      "auto_ok": true,
+      "reason": "定義の要点を誤りなく伝えている",
+      "raw_head": "自分のfork内で作業ブランチの変更を main へ取り込むよう依頼する仕組み。",
+      "raw_sha1_8": "071a6bae"
+    }
+  }
+}

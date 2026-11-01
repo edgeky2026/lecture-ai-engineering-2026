@@ -1,0 +1,1148 @@
+{
+  "note": "同じ28問・同じ採点で、検索（RAG相当）と学習（LoRA）を比べたもの。Dは qlora_lab_glossary/eval_after.json を参照",
+  "retriever": "最長一致の辞書引き（term/alias の部分一致、2文字以上、最長を1件）",
+  "retrieval_hit_rate": {
+    "known": 1.0,
+    "paraphrase": 1.0,
+    "unknown": 0.875
+  },
+  "retrieval_trace": [
+    {
+      "bucket": "known",
+      "question": "「LoRA」とは何ですか？",
+      "gold_id": "lora",
+      "retrieved_id": "lora",
+      "matched_chars": 4,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "known",
+      "question": "「ファインチューニング」とは何ですか？",
+      "gold_id": "fine-tuning",
+      "retrieved_id": "fine-tuning",
+      "matched_chars": 10,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "known",
+      "question": "「レート制限」とは何ですか？",
+      "gold_id": "rate-limit",
+      "retrieved_id": "rate-limit",
+      "matched_chars": 5,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "known",
+      "question": "「MCP（Model Context Protocol）」とは何ですか？",
+      "gold_id": "mcp",
+      "retrieved_id": "mcp",
+      "matched_chars": 27,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "known",
+      "question": "「ツール（Tool use / Function calling）」とは何ですか？",
+      "gold_id": "tool",
+      "retrieved_id": "tool",
+      "matched_chars": 32,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "known",
+      "question": "「過学習」とは何ですか？",
+      "gold_id": "overfitting",
+      "retrieved_id": "overfitting",
+      "matched_chars": 3,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "known",
+      "question": "「学習率」とは何ですか？",
+      "gold_id": "learning-rate",
+      "retrieved_id": "learning-rate",
+      "matched_chars": 3,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "known",
+      "question": "「AIエージェント」とは何ですか？",
+      "gold_id": "ai-agent",
+      "retrieved_id": "ai-agent",
+      "matched_chars": 8,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "known",
+      "question": "「ハルシネーション」とは何ですか？",
+      "gold_id": "hallucination",
+      "retrieved_id": "hallucination",
+      "matched_chars": 8,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "known",
+      "question": "「プルリクエスト（PR）」とは何ですか？",
+      "gold_id": "pull-request",
+      "retrieved_id": "pull-request",
+      "matched_chars": 11,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "Low-Rank Adaptationを一言でまとめてください。",
+      "gold_id": "lora",
+      "retrieved_id": "lora",
+      "matched_chars": 19,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "fine-tuningって結局どういう意味ですか？",
+      "gold_id": "fine-tuning",
+      "retrieved_id": "fine-tuning",
+      "matched_chars": 11,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "rate limitを一言でまとめてください。",
+      "gold_id": "rate-limit",
+      "retrieved_id": "rate-limit",
+      "matched_chars": 10,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "MCPって結局どういう意味ですか？",
+      "gold_id": "mcp",
+      "retrieved_id": "mcp",
+      "matched_chars": 3,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "ツール呼び出しを一言でまとめてください。",
+      "gold_id": "tool",
+      "retrieved_id": "tool",
+      "matched_chars": 7,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "overfittingって結局どういう意味ですか？",
+      "gold_id": "overfitting",
+      "retrieved_id": "overfitting",
+      "matched_chars": 11,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "learning rateを一言でまとめてください。",
+      "gold_id": "learning-rate",
+      "retrieved_id": "learning-rate",
+      "matched_chars": 13,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "エージェントって結局どういう意味ですか？",
+      "gold_id": "ai-agent",
+      "retrieved_id": "ai-agent",
+      "matched_chars": 6,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "幻覚を一言でまとめてください。",
+      "gold_id": "hallucination",
+      "retrieved_id": "hallucination",
+      "matched_chars": 2,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "PRって結局どういう意味ですか？",
+      "gold_id": "pull-request",
+      "retrieved_id": "pull-request",
+      "matched_chars": 2,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "unknown",
+      "question": "RAG（検索拡張生成）とは何ですか？",
+      "gold_id": null,
+      "retrieved_id": null,
+      "matched_chars": 0,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "unknown",
+      "question": "RLHF（人間のフィードバックからの強化学習）とは何ですか？",
+      "gold_id": null,
+      "retrieved_id": null,
+      "matched_chars": 0,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "unknown",
+      "question": "エンベディング（embedding）とは何ですか？",
+      "gold_id": null,
+      "retrieved_id": null,
+      "matched_chars": 0,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "unknown",
+      "question": "ベクトルデータベースとは何ですか？",
+      "gold_id": null,
+      "retrieved_id": null,
+      "matched_chars": 0,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "unknown",
+      "question": "マルチモーダルモデルとは何ですか？",
+      "gold_id": null,
+      "retrieved_id": null,
+      "matched_chars": 0,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "unknown",
+      "question": "プロンプトインジェクションとは何ですか？",
+      "gold_id": null,
+      "retrieved_id": "prompt",
+      "matched_chars": 5,
+      "retrieval_correct": false
+    },
+    {
+      "bucket": "unknown",
+      "question": "Few-shot learning（少数ショット学習）とは何ですか？",
+      "gold_id": null,
+      "retrieved_id": null,
+      "matched_chars": 0,
+      "retrieval_correct": true
+    },
+    {
+      "bucket": "unknown",
+      "question": "ReActパターンとは何ですか？",
+      "gold_id": null,
+      "retrieved_id": null,
+      "matched_chars": 0,
+      "retrieval_correct": true
+    }
+  ],
+  "summaries": {
+    "A_検索のみ": {
+      "label": "A_検索のみ",
+      "n": 28,
+      "seconds": 17.1,
+      "known": {
+        "n": 10,
+        "rate": 1.0
+      },
+      "paraphrase": {
+        "n": 10,
+        "rate": 1.0
+      },
+      "unknown": {
+        "n": 8,
+        "rate": 0.0
+      },
+      "false_abstention": {
+        "n": 20,
+        "rate": 0.0
+      }
+    },
+    "B_学習のみ_指示あり": {
+      "label": "B_学習のみ_指示あり",
+      "n": 28,
+      "seconds": 36.1,
+      "known": {
+        "n": 10,
+        "rate": 0.9
+      },
+      "paraphrase": {
+        "n": 10,
+        "rate": 0.7
+      },
+      "unknown": {
+        "n": 8,
+        "rate": 0.0
+      },
+      "false_abstention": {
+        "n": 20,
+        "rate": 0.0
+      }
+    },
+    "C_学習と検索の併用": {
+      "label": "C_学習と検索の併用",
+      "n": 28,
+      "seconds": 32.3,
+      "known": {
+        "n": 10,
+        "rate": 0.7
+      },
+      "paraphrase": {
+        "n": 10,
+        "rate": 0.8
+      },
+      "unknown": {
+        "n": 8,
+        "rate": 0.0
+      },
+      "false_abstention": {
+        "n": 20,
+        "rate": 0.0
+      }
+    }
+  },
+  "rows": {
+    "A_検索のみ": [
+      {
+        "bucket": "known",
+        "question": "「LoRA」とは何ですか？",
+        "term_id": "lora",
+        "retrieved_id": "lora",
+        "retrieved_len": 4,
+        "raw": "LoRA は事前学習済みの重みを固定し、学習分を低ランク行列で学習する PEFT 手法です。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「ファインチューニング」とは何ですか？",
+        "term_id": "fine-tuning",
+        "retrieved_id": "fine-tuning",
+        "retrieved_len": 10,
+        "raw": "ファインチューニングは、事前学習済みモデルを特定タスクや形式に合わせたデータで追加学習させることで、特定のドメインの振る舞いを身につけるための学習方法です。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「レート制限」とは何ですか？",
+        "term_id": "rate-limit",
+        "retrieved_id": "rate-limit",
+        "retrieved_len": 5,
+        "raw": "レート制限は、一定時間あたりに呼び出せるリクエスト数やトークン数の上限を指し、超えるとエラーが返される仕組みです。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「MCP（Model Context Protocol）」とは何ですか？",
+        "term_id": "mcp",
+        "retrieved_id": "mcp",
+        "retrieved_len": 27,
+        "raw": "MCP は AI アプリと外部ツールやデータソースをつなぐためのオープンな標準プロトコルです。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「ツール（Tool use / Function calling）」とは何ですか？",
+        "term_id": "tool",
+        "retrieved_id": "tool",
+        "retrieved_len": 32,
+        "raw": "ツール（Tool use / Function calling）は、モデルが呼び出せるように用意した関数であり、検索やファイル操作などの機能を実行する際にモデルが引数を決めて呼び出しを依頼し、プログラム側が行う仕組みです。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「過学習」とは何ですか？",
+        "term_id": "overfitting",
+        "retrieved_id": "overfitting",
+        "retrieved_len": 3,
+        "raw": "学習データに過度に適合し、未知の入力に対する性能が落ちる状態です。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「学習率」とは何ですか？",
+        "term_id": "learning-rate",
+        "retrieved_id": "learning-rate",
+        "retrieved_len": 3,
+        "raw": "学習率は、1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータで、大きすぎると学習が不安定になり、小さすぎると進みが遅い。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「AIエージェント」とは何ですか？",
+        "term_id": "ai-agent",
+        "retrieved_id": "ai-agent",
+        "retrieved_len": 8,
+        "raw": "AIエージェントは、LLMが自ら判断してツールを呼び出しその結果を見て次の行動を決めるループで目的を達成するシステムです。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「ハルシネーション」とは何ですか？",
+        "term_id": "hallucination",
+        "retrieved_id": "hallucination",
+        "retrieved_len": 8,
+        "raw": "ハルシネーションとは、LLMが事実と異なる内容や存在しない情報を、もっともらしく生成してしまう現象です。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「プルリクエスト（PR）」とは何ですか？",
+        "term_id": "pull-request",
+        "retrieved_id": "pull-request",
+        "retrieved_len": 11,
+        "raw": "プルリクエストはブランチの変更を別のブランチへ取り込む仕組みで、本講座では自分のfork内で作業ブランチからmainへのPRとして提出します。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "Low-Rank Adaptationを一言でまとめてください。",
+        "term_id": "lora",
+        "retrieved_id": "lora",
+        "retrieved_len": 19,
+        "raw": "LoRA は低ランク行列の積で学習するPEFT手法で、学習結果を小さく保存できる。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "fine-tuningって結局どういう意味ですか？",
+        "term_id": "fine-tuning",
+        "retrieved_id": "fine-tuning",
+        "retrieved_len": 11,
+        "raw": "fine-tuning は事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させることで、その目的に合わせた出力の形式や口調、特定ドメインの振る舞いを身につける方法です。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "rate limitを一言でまとめてください。",
+        "term_id": "rate-limit",
+        "retrieved_id": "rate-limit",
+        "retrieved_len": 10,
+        "raw": "レート制限はリクエスト数やトークン数の上限を指し、超えると HTTP 429 などのエラーが発生します。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "MCPって結局どういう意味ですか？",
+        "term_id": "mcp",
+        "retrieved_id": "mcp",
+        "retrieved_len": 3,
+        "raw": "MCP は AI アプリと外部ツールやデータソースをつなぐためのオープンな標準プロトコルです。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "ツール呼び出しを一言でまとめてください。",
+        "term_id": "tool",
+        "retrieved_id": "tool",
+        "retrieved_len": 7,
+        "raw": "ツール呼び出しは、モデルが呼び出せるように用意した関数で、プログラム側が引数を決めて実行を行います。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "overfittingって結局どういう意味ですか？",
+        "term_id": "overfitting",
+        "retrieved_id": "overfitting",
+        "retrieved_len": 11,
+        "raw": "過学習は学習データに過度に適合し、未知の入力に対する性能が落ちる状態です。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "learning rateを一言でまとめてください。",
+        "term_id": "learning-rate",
+        "retrieved_id": "learning-rate",
+        "retrieved_len": 13,
+        "raw": "学習率は1回の更新でパラメータを動かすハイパーパラメータで、大きすぎると不安定になり、小さすぎると進みが遅い。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "エージェントって結局どういう意味ですか？",
+        "term_id": "ai-agent",
+        "retrieved_id": "ai-agent",
+        "retrieved_len": 6,
+        "raw": "AIエージェントは、モデルが自ら判断してツールを呼び出し、その結果を元に次の行動を決めるループで、その目的を達成するシステムです。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "幻覚を一言でまとめてください。",
+        "term_id": "hallucination",
+        "retrieved_id": "hallucination",
+        "retrieved_len": 2,
+        "raw": "LLMが事実と異なる情報や組織固有の知識を誤って生成する現象を「ハルシネーション」と呼びます。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "PRって結局どういう意味ですか？",
+        "term_id": "pull-request",
+        "retrieved_id": "pull-request",
+        "retrieved_len": 2,
+        "raw": "PRはブランチの作業を別のブランチへ取り込む仕組みで、本講座では自分のforkからmainへのPRとして提出します。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "RAG（検索拡張生成）とは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "RAG（検索拡張生成）は、大規模なテキストデータから知識を抽出し、その知識に基づいて質問に対して回答する技術です。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "RLHF（人間のフィードバックからの強化学習）とは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "RLHF は人間のフィードバックに基づいて強化学習を適用した学習手法です。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "エンベディング（embedding）とは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "エンベディングとは、言語の文脈や文脈依存性を考慮して、文脈に適合する文脈を構築する言語学的手法です。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "ベクトルデータベースとは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "ベクトルデータベースは、データがベクトル（座標）の形で保存・操作されるデータベースです。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "マルチモーダルモデルとは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "マルチモーダルモデルは、複数の情報源（視覚、聴覚、触覚など）を統合して理解する機械学習モデルです。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "プロンプトインジェクションとは何ですか？",
+        "term_id": null,
+        "retrieved_id": "prompt",
+        "retrieved_len": 5,
+        "raw": "プロンプトインジェクションとは、LLMに渡す入力文を「役割、制約、出力形式、例」などを含め、出力を方向づけるための入力文のことです。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "Few-shot learning（少数ショット学習）とは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "Few-shot learning は、学習データに少数のサンプル（Few-shot）を提示し、それらのパターンに基づいてモデルを学習する手法です。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "ReActパターンとは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "ReAct（Reasoning and Acting）は、思考と行動を段階的に組み合わせる学習パターンで、思考を段階的に実行する。",
+        "ok": false,
+        "abstained": false
+      }
+    ],
+    "B_学習のみ_指示あり": [
+      {
+        "bucket": "known",
+        "question": "「LoRA」とは何ですか？",
+        "term_id": "lora",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoRAを扱う。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「ファインチューニング」とは何ですか？",
+        "term_id": "fine-tuning",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させること。出力の形式や口調、特定ドメインの振る舞いを身につけさせるのに向く。最新の事実を覚えさせる用途には、ツールやRAGで外部データを参照させるほうが向くことが多い。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「レート制限」とは何ですか？",
+        "term_id": "rate-limit",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "一定時間あたりに呼び出せるリクエスト数やトークン数の上限。超えるとHTTP 429などのエラーが返る。無料講座は特に制限が厳しく、エージェントは1つの質問で複数回LLMを呼ぶため上限に達しやすい。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「MCP（Model Context Protocol）」とは何ですか？",
+        "term_id": "mcp",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "AIアプリと外部のツールやデータソースをつなぐためのオープンな標準プロトコル。MCPサーバーとして公開したツールは、対応する様々なエージェントやエディタ（MCPクライアント）から共通の方法で使える。第5回で、用語集中的に表す。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「ツール（Tool use / Function calling）」とは何ですか？",
+        "term_id": "tool",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "モデルが呼び出せるように用意した関数。モデルはツールの名前・説明・引数の型を見て、必要なときに引数を決めて呼び出しを依頼し、実行はプログラム側が行う。検索、計算、ファイル操作、外部APIの呼び出しなどに使う。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「過学習」とは何ですか？",
+        "term_id": "overfitting",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない検証データで性能を測って気づく。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「学習率」とは何ですか？",
+        "term_id": "learning-rate",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると学習が不安定になり、小さすぎると進みが遅い。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「AIエージェント」とは何ですか？",
+        "term_id": "ai-agent",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "LLMが自分で判断してツールを呼び出し、その結果を見てさらに次の行動を決める、というループで目的を達成するシステム。基本構造は「モデル＋ループ＋ツール」。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「ハルシネーション」とは何ですか？",
+        "term_id": "hallucination",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "学習データに実際に出現しない入力や出力、モデルが知らないことを当作学習データと扱う現象。モデルが知らないことを学習させるため名字を付ける。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「プルリクエスト（PR）」とは何ですか？",
+        "term_id": "pull-request",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "あるブランチの変更を別のブランチへ取り込むよう依頼する仕組み。差分の確認、コメント、自動テストの結果表示ができる。本講座の提出は、自分のfork内で作業ブランチから main へのPRとして行う。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "Low-Rank Adaptationを一言でまとめてください。",
+        "term_id": "lora",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "高ランクのモデルを、特定のデータやタスクで調整した低ランクモデルに頼る手法。より多くのデータでテストしないため学習が安定し、評価で違いを測る。本講座の第2回演習ではLoRAで2モデルを調整した低ランクモデルを扱う。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "fine-tuningって結局どういう意味ですか？",
+        "term_id": "fine-tuning",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させること。出力の形式や口調、特定ドメインの振る舞いを身につけさせるのに向く。最新の事実を覚えさせる用途には、ツールやRAGで外部データを参照させるほうが向くことが多い。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "rate limitを一言でまとめてください。",
+        "term_id": "rate-limit",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "時間やトークン数あたりの質問数や出力数の上限。超えるとHTTP 429などのエラーが返る。無料枠は特に制限が厳しく、エージェントは1つの質問で複数回LLMを呼ぶため上限に達しやすい。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "MCPって結局どういう意味ですか？",
+        "term_id": "mcp",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "MCP（Model Context Protocol）とは、AIアプリとツール（やリソース、やデータ）をつなぐためのオープンな標準プロトコル。MCPサーバーとして公開したツールは、対応する様々なエージェントやエディタ（MCPクライアント）から共通の方法で使える。第5回で、用語集の添文で、エージェントのプログラムからツールをMCPサーバーにして体験する。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "ツール呼び出しを一言でまとめてください。",
+        "term_id": "tool",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "Pydantic AIではツールを名前と説明文に書ient",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "overfittingって結局どういう意味ですか？",
+        "term_id": "overfitting",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない検証データで性能を測って気づく。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "learning rateを一言でまとめてください。",
+        "term_id": "learning-rate",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると学習が不安定になり、小さすぎると進みが遅い。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "エージェントって結局どういう意味ですか？",
+        "term_id": "ai-agent",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "LLMが自分で判断してツールを呼び出し、その結果を見てさらに次の行動を決める、というループで目的を達成するシステム。基本構造は「モデル＋ループ＋ツール」。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "幻覚を一言でまとめてください。",
+        "term_id": "hallucination",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "外部の事実や経験から生じる実在のない感覚。 senses of sight, hearing, taste, and smell are especially prone to being illusory.",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "PRって結局どういう意味ですか？",
+        "term_id": "pull-request",
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "エージェントがツールの名前・説明・引数の説明文を読霉素で公開し、エージェントが選んだツールを呼び出して結果を返す間の活動をPRする。結果の書き方、公開の仕方、評価の仕方、回数の上限、などの設計がPRの内容（テーマ）と評価の基準になる。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "RAG（検索拡張生成）とは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "LLMがLLMの振る舞い（関数呼び出し、ファイル操作、ツールなど）を呼び出して答えられるようにツールを集め、その結果をLLMで評価し、結果をモデルに渡す手法。モデルが選んだツールを呼び出して結果を返すのが一般的。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "RLHF（人間のフィードバックからの強化学習）とは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "モデルの出力を人の確認（回答の意味を書く）から始め、その人の評価と戻し書きからモデルを学習する手法。学習データは主に質問・模範回答・評価結果のトリックから構成する。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "エンベディング（embedding）とは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "モデルの出力（テキストや画像）を、特定のドメインや形式に合ったデータで補完する手法。同じ質問をAIE2で扱うとき、同じモデルと同じ入力で同じ出力を返すため、同じ質問で不同的人や異なる入力で同じ出力を返すとき、同じモデルと同じ入力で同じ出力を返すほうが妥当。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "ベクトルデータベースとは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "大量のツールの名前・説明・引数のスキーマを、3次元空間で集約するシステム。検索はツールをIDで絞り、補完は質問でツールを提案する、と設計する。Pydantic AIではToolClassの型で表現し、GeminiやOpenAIなど多くのモーフィング可能なモデルを共通で扱える。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "マルチモーダルモデルとは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "LLMがテキストと画像（や動画、音声）から入力を受け、その中のどの要素に焦点を当て、どの形式での出力を返すかを決めるプログラムやツールが presentになる。異なる模範モデルやツールを同じ入力で扱うことで精度や安全性を上げる。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "プロンプトインジェクションとは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "LLMが自分のアカウントや組織の名前、自分の行動や出力を、ある別のアカウントや組織の名前、別の行動や出力に書き換える能力。Claude Codeは「Codespaces secret」や「GitHub secret」といった設定ファイルからプロンプトを読み出し、実行結果を別の場所で書き出すため、プロンプトインジェクションに脆弱である。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "Few-shot learning（少数ショット学習）とは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "大量のタスクやデータで学習するのではなく、1つの質問に複数の回答を返すモデルを、実際に使うときに少ないデータでテストする手法。重要な質問には複数の回答を選ぶツールを、興しい質問には1つの回答で終わるモデルを選ぶ手法で選ぶ。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "ReActパターンとは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "LLMが行動するようmakeItReactにする。モデルに質問するとその質問を実行し、結果をモデルに戻すか、またはモデルが結果を返すのを停め、エージェントが結果を確認する。本講座の7つの基本原則、少なくとも1つをMakeItReactで使う。",
+        "ok": false,
+        "abstained": false
+      }
+    ],
+    "C_学習と検索の併用": [
+      {
+        "bucket": "known",
+        "question": "「LoRA」とは何ですか？",
+        "term_id": "lora",
+        "retrieved_id": "lora",
+        "retrieved_len": 4,
+        "raw": "事前学習済みの重みを固定したまま、学習するパラメータを2つの小さな行列の積で表し、その小さな行列だけを学習する手法。学習するパラメータが少なく、保存できる。本講座の第2回演習ではLoRAを扱う。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「ファインチューニング」とは何ですか？",
+        "term_id": "fine-tuning",
+        "retrieved_id": "fine-tuning",
+        "retrieved_len": 10,
+        "raw": "モデルを、特定のタスクや形式に合ったデータで追加学習させること。口調や特定ドメインの振る舞いを身につけさせるのに向く。最新の事実を覚えさせる用途には、ツールやRAGで外部データを参照させるほうが向くことが多い。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「レート制限」とは何ですか？",
+        "term_id": "rate-limit",
+        "retrieved_id": "rate-limit",
+        "retrieved_len": 5,
+        "raw": "一定時間あたりに呼び出せるリクエスト数やトークン数の上限。超えるとHTTP 429などのエラーが返る。無料枠は特に制限が厳しく、1つの質問で複数回LLMを呼ぶため上限に達しやすい。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「MCP（Model Context Protocol）」とは何ですか？",
+        "term_id": "mcp",
+        "retrieved_id": "mcp",
+        "retrieved_len": 27,
+        "raw": "MCPでツールやデータソースを公開する仕組み。クライアントは、対応するクライアントソフトから同じ場所に立つので、同じツールを呼び出すことのできる。第5回で、用語集の検索をMCPサーバーにして体験する。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「ツール（Tool use / Function calling）」とは何ですか？",
+        "term_id": "tool",
+        "retrieved_id": "tool",
+        "retrieved_len": 32,
+        "raw": "モデルが呼び出せるように用意した関数。モデルはツールの名前・説明・引数の型を見て、必要なときに引数を決めて呼び出しを依頼し、実行はプログラム側が行う。検索、計算、ファイル操作、外部APIの呼び出しなどに使う。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「過学習」とは何ですか？",
+        "term_id": "overfitting",
+        "retrieved_id": "overfitting",
+        "retrieved_len": 3,
+        "raw": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない検証データで性能を測って気づく。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「学習率」とは何ですか？",
+        "term_id": "learning-rate",
+        "retrieved_id": "learning-rate",
+        "retrieved_len": 3,
+        "raw": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると学習が不安定になり、小さすぎると進みが遅い。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「AIエージェント」とは何ですか？",
+        "term_id": "ai-agent",
+        "retrieved_id": "ai-agent",
+        "retrieved_len": 8,
+        "raw": "LLMが自分で判断してツールを呼び出し、その結果を見てさらに次の行動を決める、というループで目的を達成するシステム。基本構造は「モデル＋ループ＋ツール」。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「ハルシネーション」とは何ですか？",
+        "term_id": "hallucination",
+        "retrieved_id": "hallucination",
+        "retrieved_len": 8,
+        "raw": "モデルが知らないこと（最新情報、講座に固有の情報、組織や講座に固有の用語など）を聞いたときに、もっともらしく文章を生成してしまう現象。ツールを呼び出して事実を参照させる、根拠を示させる、評価で検出する、などで抑える。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "known",
+        "question": "「プルリクエスト（PR）」とは何ですか？",
+        "term_id": "pull-request",
+        "retrieved_id": "pull-request",
+        "retrieved_len": 11,
+        "raw": "あるブランチの変更を別のブランチへ取り込むよう依頼する仕組み。差分の確認、コメント、自動テストの結果表示ができる。本講座の提出は、自分のfork内で作業ブランチから main へのPRとして行う。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "Low-Rank Adaptationを一言でまとめてください。",
+        "term_id": "lora",
+        "retrieved_id": "lora",
+        "retrieved_len": 19,
+        "raw": "学習するパラメータが少なく、保存できる小さな行列だけを学習するPEFT手法。LoRAが代表例。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "fine-tuningって結局どういう意味ですか？",
+        "term_id": "fine-tuning",
+        "retrieved_id": "fine-tuning",
+        "retrieved_len": 11,
+        "raw": "モデルを、特定のタスクや形式に合ったデータで追加学習させること。口調や特定ドメインの振る舞いを身につけさせるのに向く。外部データを参照させるほうが向く場合、ツールやRAGでデータを源材料に付けるほうが向くことが多い。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "rate limitを一言でまとめてください。",
+        "term_id": "rate-limit",
+        "retrieved_id": "rate-limit",
+        "retrieved_len": 10,
+        "raw": "一定時間あたりに呼び出せるリクエスト数やトークン数の上限。超えるとHTTP 429などのエラーが返る。無料枠は特に制限が厳しく、1つの質問で複数回LLMを呼ぶため上限に達しやすい。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "MCPって結局どういう意味ですか？",
+        "term_id": "mcp",
+        "retrieved_id": "mcp",
+        "retrieved_len": 3,
+        "raw": "MCPでツールを公開し、対応する様々なエージェントやエディタから共通の方法で使えるオープンな標準プロトコル。第5回で、用語集の検索をMCPサーバーにして体験する。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "ツール呼び出しを一言でまとめてください。",
+        "term_id": "tool",
+        "retrieved_id": "tool",
+        "retrieved_len": 7,
+        "raw": "モデルが呼び出せるように用意した関数。引数の型や説明はモデルの指示で決める。プログラムが呼び出せるように用意した関数。引数の型や説明はモデルの指示で決める。モデルが呼び出せるように用意した関数。引数の型や説明はモデルの指示で決める。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "overfittingって結局どういう意味ですか？",
+        "term_id": "overfitting",
+        "retrieved_id": "overfitting",
+        "retrieved_len": 11,
+        "raw": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない検証データで性能を測って気づく。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "learning rateを一言でまとめてください。",
+        "term_id": "learning-rate",
+        "retrieved_id": "learning-rate",
+        "retrieved_len": 13,
+        "raw": "学習率。1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると学習が不安定になり、小さすぎると進みが遅い。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "エージェントって結局どういう意味ですか？",
+        "term_id": "ai-agent",
+        "retrieved_id": "ai-agent",
+        "retrieved_len": 6,
+        "raw": "LLMが自分で判断してツールを呼び出し、その結果を見てさらに次の行動を決める、というループで目的を達成するシステム。基本構造は「モデル＋ループ＋ツール」。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "幻覚を一言でまとめてください。",
+        "term_id": "hallucination",
+        "retrieved_id": "hallucination",
+        "retrieved_len": 2,
+        "raw": "外部データをツールで参照させる、根拠を示させる、評価で検出する、などで抑える。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "paraphrase",
+        "question": "PRって結局どういう意味ですか？",
+        "term_id": "pull-request",
+        "retrieved_id": "pull-request",
+        "retrieved_len": 2,
+        "raw": "自分のfork内で作業ブランチの変更を main へ取り込むよう依頼する仕組み。差分の確認、コメント、自動テストの結果表示ができる。本講座の提出は、自分のfork内で作業ブランチから main へのPRとして行う。",
+        "ok": true,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "RAG（検索拡張生成）とは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "LLMが事前学習済みのモデルやツールとの接続を記憶に固有のメモリで取り込むよう設計したエージェントを、質問に応じてそのメモリで検索し、結果をモデルに渡して生成する手法。検索を呼び出すツールは、エージェントの状況（メモリ、設定、ツールの状態）を伝えるためのコラクション（LLMに渡す入力） rather than 結果を伝える結果として使う。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "RLHF（人間のフィードバックからの強化学習）とは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "モデルの出力を人の確認と評価からして良し悪しを判断し、その結果をモデルに追加パラメータで学習する手法。回数を増やしすぎると学習が不安定になりやすい。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "エンベディング（embedding）とは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "モデルの出力（テキストや画像）を、特定の言語やフォーマットに合ったデータで書き、再度モデルに入力を渡す方法。同じ質問でも質問文や回答が変わるため、同じ質問でも異なるエンベディングになる。より precisな表現を扱うために、質問文や回答をモデルに入力を渡す（入力文の插位）。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "ベクトルデータベースとは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "大量のツールの名前・説明・引数の意味を表すデータベース。Pydantic AIでは Azimuth-BBQ（Azequiao's hierarchical model）で学習・評価・検証する。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "マルチモーダルモデルとは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "LLMが複数の入力形式（例：画像＋テキスト）や、複数の出力形式（例：テキスト＋スコア）を、同じLLMを扱う手法。異なる入力や出力を同時に扱える設計の深み。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "プロンプトインジェクションとは何ですか？",
+        "term_id": null,
+        "retrieved_id": "prompt",
+        "retrieved_len": 5,
+        "raw": "LLMがモデルに渡す入力文を、自分の質問に挟むこと。質問内容と役割、出力形式、例を自分で選べるが、質問自体を改めるのは不可能。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "Few-shot learning（少数ショット学習）とは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "大量のタスクやデータで学習し、少数の例で性能を測る。例：大量で学習し、1つの質問で1つのショットで評価する。",
+        "ok": false,
+        "abstained": false
+      },
+      {
+        "bucket": "unknown",
+        "question": "ReActパターンとは何ですか？",
+        "term_id": null,
+        "retrieved_id": null,
+        "retrieved_len": 0,
+        "raw": "LLMが事実を覚えさせるためのツール。モデルはツールを呼び出し、その結果を記憶し、次の質問に渡す。質問応答はモデルで進める。検索や計算は、別のプロセスやツールで進める。",
+        "ok": false,
+        "abstained": false
+      }
+    ]
+  }
+}

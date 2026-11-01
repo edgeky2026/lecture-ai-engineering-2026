@@ -212,7 +212,9 @@ result = {
         "trl": __import__("trl").__version__,
         "torch": torch.__version__,
     },
-    "method": "LoRA（量子化なし）。FAQ の代わりに講座用語集 58 語を学習",
+    # 否定例16件のことを書いていなかったので直した（コミット済みの result.json には古い文のまま残っている）
+    "method": "LoRA（量子化なし）。講座用語集の正例116件 + 否定例16件（比率0.121）を学習。"
+              "エポック固定のため最適化ステップが 340 になり v1 の 300 と揃っていない",
     "gpu": torch.cuda.get_device_name(0) if DEVICE == "cuda" else None,
     "train_examples": len(train_raw),
     "train_seconds": round(train_seconds, 1),

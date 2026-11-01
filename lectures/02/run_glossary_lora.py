@@ -82,7 +82,10 @@ for i, tid in enumerate(KNOWN_IDS):
     tmpl = PARAPHRASE_TEMPLATES[i % 2]
     paraphrase_q.append((tmpl.format(term=name), tid))
 
-# 用語集に存在しない語（事前学習の一般知識にはあり得るが、この glossary.json には項目が無いことを ids で確認済み）
+# 用語集に「項目が無い」語（事前学習の一般知識にはあり得る）。
+# 注意: 項目が無いだけで、語そのものが用語集の本文に出ないとは限らない。
+#       実測すると "RAG" は fine-tuning の定義文（「ツールやRAGで外部データを参照させる…」）に現れるため、
+#       学習データにも語としては入っている。unknown は「項目として定義されていない語」の意味で使う。
 UNKNOWN_Q = [
     "RAG（検索拡張生成）とは何ですか？",
     "RLHF（人間のフィードバックからの強化学習）とは何ですか？",
