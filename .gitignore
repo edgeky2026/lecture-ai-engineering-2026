@@ -14,6 +14,8 @@ learning_log/
 # 第2回宿題（発展）: LoRA アダプタの重みはコミットしない（result.json / eval_*.json で十分）
 lectures/02/qlora_lab_glossary/adapter/
 lectures/02/qlora_lab_glossary/ckpt/
+lectures/02/qlora_lab_glossary_v2_unknown_aware/adapter/
+lectures/02/qlora_lab_glossary_v2_unknown_aware/ckpt/
 
 # macOS
 .DS_Store
