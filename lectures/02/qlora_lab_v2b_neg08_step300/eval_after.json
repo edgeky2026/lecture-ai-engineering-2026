@@ -1,0 +1,256 @@
+{
+  "summary": {
+    "label": "after",
+    "n": 28,
+    "known": {
+      "n": 10,
+      "rate": 1.0
+    },
+    "paraphrase": {
+      "n": 10,
+      "rate": 0.7
+    },
+    "unknown": {
+      "n": 8,
+      "rate": 0.125
+    },
+    "unknown_excl_fewshot": {
+      "n": 7,
+      "rate": 0.0
+    },
+    "false_abstention": {
+      "n": 20,
+      "rate": 0.05,
+      "cases": [
+        "lora"
+      ]
+    },
+    "seconds": 33.5
+  },
+  "rows": [
+    {
+      "bucket": "known",
+      "question": "「LoRA」とは何ですか？",
+      "term_id": "lora",
+      "raw": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoRAを扱う。",
+      "ok": true,
+      "abstained": false
+    },
+    {
+      "bucket": "known",
+      "question": "「ファインチューニング」とは何ですか？",
+      "term_id": "fine-tuning",
+      "raw": "事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させること。出力の形式や口調、特定ドメインの振る舞いを身につけさせるのに向く。最新の事実を覚えさせる用途には、ツールやRAGで外部データを参照させるほうが向くことが多い。",
+      "ok": true,
+      "abstained": false
+    },
+    {
+      "bucket": "known",
+      "question": "「レート制限」とは何ですか？",
+      "term_id": "rate-limit",
+      "raw": "一定時間あたりに呼び出せるリクエスト数やトークン数の上限。超えるとHTTP 429などのエラーが返る。無料枠は特に制限が厳しく、エージェントは1つの質問で複数回LLMを呼ぶため上限に達しやすい。",
+      "ok": true,
+      "abstained": false
+    },
+    {
+      "bucket": "known",
+      "question": "「MCP（Model Context Protocol）」とは何ですか？",
+      "term_id": "mcp",
+      "raw": "AIアプリと外部のツールやデータソースをつなぐためのオープンな標準プロトコル。MCPサーバーとして公開したツールは、対応する様々なエージェントやエディタ（MCPクライアント）から共通の方法で使える。第5回で、用語集の検索をMCPサーバーにして体験する。",
+      "ok": true,
+      "abstained": false
+    },
+    {
+      "bucket": "known",
+      "question": "「ツール（Tool use / Function calling）」とは何ですか？",
+      "term_id": "tool",
+      "raw": "モデルが呼び出せるように用意した関数。モデルはツールの名前・説明・引数の型を見て、必要なときに引数を決めて呼び出しを依頼し、実行はプログラム側が行う。検索、計算、ファイル操作、外部APIの呼び出しなどに使う。",
+      "ok": true,
+      "abstained": false
+    },
+    {
+      "bucket": "known",
+      "question": "「過学習」とは何ですか？",
+      "term_id": "overfitting",
+      "raw": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない検証データで性能を測って気づく。",
+      "ok": true,
+      "abstained": false
+    },
+    {
+      "bucket": "known",
+      "question": "「学習率」とは何ですか？",
+      "term_id": "learning-rate",
+      "raw": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると学習が不安定になり、小さすぎると進みが遅い。",
+      "ok": true,
+      "abstained": false
+    },
+    {
+      "bucket": "known",
+      "question": "「AIエージェント」とは何ですか？",
+      "term_id": "ai-agent",
+      "raw": "LLMが自分で判断してツールを呼び出し、その結果を見てさらに次の行動を決める、というループで目的を達成するシステム。基本構造は「モデル＋ループ＋ツール」。",
+      "ok": true,
+      "abstained": false
+    },
+    {
+      "bucket": "known",
+      "question": "「ハルシネーション」とは何ですか？",
+      "term_id": "hallucination",
+      "raw": "LLMが事実と異なる内容や存在しない情報を、もっともらしく生成してしまう現象。モデルが知らないこと（最新情報、組織や講座に固有の情報など）を聞いたときに起きやすい。外部データをツールで参照させる、根拠を示させる、評価で検出する、などで抑える。",
+      "ok": true,
+      "abstained": false
+    },
+    {
+      "bucket": "known",
+      "question": "「プルリクエスト（PR）」とは何ですか？",
+      "term_id": "pull-request",
+      "raw": "あるブランチの変更を別のブランチへ取り込むよう依頼する仕組み。差分の確認、コメント、自動テストの結果表示ができる。本講座の提出は、自分のfork内で作業ブランチから main へのPRとして行う。",
+      "ok": true,
+      "abstained": false
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "Low-Rank Adaptationを一言でまとめてください。",
+      "term_id": "lora",
+      "raw": "この用語集には記載がありません。該当する項目が追加されるまで確認が必要です。",
+      "ok": false,
+      "abstained": true
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "fine-tuningって結局どういう意味ですか？",
+      "term_id": "fine-tuning",
+      "raw": "事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させること。出力の形式や口調、特定ドメインの振る舞いを身につけさせるのに向く。最新の事実を覚えさせる用途には、ツールやRAGで外部データを参照させるほうが向くことが多い。",
+      "ok": true,
+      "abstained": false
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "rate limitを一言でまとめてください。",
+      "term_id": "rate-limit",
+      "raw": "一定時間あたりに呼び出せるリクエスト数やトークン数の上限。超えるとHTTP 429などのエラーが返る。無料枠は特に制限が厳しく、エージェントは1つの質問で複数回LLMを呼ぶため上限に達しやすい。",
+      "ok": true,
+      "abstained": false
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "MCPって結局どういう意味ですか？",
+      "term_id": "mcp",
+      "raw": "AIアプリと外部のツールやデータソースをつなぐためのオープンな標準のAPI。MCPサーバーとして公開したツールは、対応する様々なエージェントやエディタ（MCPクライアント）から共通の方法で使える。第5回で、用語集の検索をMCPサーバーにして体験する。",
+      "ok": false,
+      "abstained": false
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "ツール呼び出しを一言でまとめてください。",
+      "term_id": "tool",
+      "raw": "指定したモデルに名前を付けている関数。Pydantic AIでは tool_set のモデルオプションから選択する。モデルが追加されるまでツールは起動しない。",
+      "ok": true,
+      "abstained": false
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "overfittingって結局どういう意味ですか？",
+      "term_id": "overfitting",
+      "raw": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない検証データで性能を測って気づく。",
+      "ok": true,
+      "abstained": false
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "learning rateを一言でまとめてください。",
+      "term_id": "learning-rate",
+      "raw": "一回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると学習が不安定になり、小さすぎると進みが遅い。",
+      "ok": true,
+      "abstained": false
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "エージェントって結局どういう意味ですか？",
+      "term_id": "ai-agent",
+      "raw": "LLMが自分で判断してツールを呼び出し、その結果を見てさらに次の行動を決める、というループで目的を達成するシステム。基本構造は「モデル＋ループ＋ツール」。",
+      "ok": true,
+      "abstained": false
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "幻覚を一言でまとめてください。",
+      "term_id": "hallucination",
+      "raw": "LLMが事実と異なる内容や存在しない情報を、もっともらしく生成してしまう現象。モデルが知らないこと（最新情報、組織や講座に固有の情報など）を聞いたときに起きやすい。外部データをツールで参照させる、根拠を示させる、評価で検出する、などで抑える。",
+      "ok": true,
+      "abstained": false
+    },
+    {
+      "bucket": "paraphrase",
+      "question": "PRって結局どういう意味ですか？",
+      "term_id": "pull-request",
+      "raw": "ファイルの書き込みをツール（例えば Pythonの `main()`）から受け取る仕組み。本講座ではコミット前の書き込みを PR として扱う。",
+      "ok": false,
+      "abstained": false
+    },
+    {
+      "bucket": "unknown",
+      "question": "RAG（検索拡張生成）とは何ですか？",
+      "term_id": null,
+      "raw": "モデルが望ましくない質問を返すのを止めるために、LLMが欲しい文章をツールで呼び出して検索する、または画像をツールで呼び出して検出する、などの手法。出力はモデルの結果が来るので、最終回答はモデルが選んだもの。",
+      "ok": false,
+      "abstained": false
+    },
+    {
+      "bucket": "unknown",
+      "question": "RLHF（人間のフィードバックからの強化学習）とは何ですか？",
+      "term_id": null,
+      "raw": "エージェントの振る舞い（タスク、口調、回答形式）を人間の評価でよく、その評価をフィードで学習し、より良い表現を出力する強化学習。本講座の第2回演習では、BAB（質問・回答・確認）の3つをツールとして使い、人間のfeedbackでRLHF学習する。",
+      "ok": false,
+      "abstained": false
+    },
+    {
+      "bucket": "unknown",
+      "question": "エンベディング（embedding）とは何ですか？",
+      "term_id": null,
+      "raw": "モデルがテキストを表示する境界に、テキストを長文に分割し、各単語をWord2Vecなどのベクト리로embedする。この過程の結果をファイルに書き込むのがエンベディング。",
+      "ok": false,
+      "abstained": false
+    },
+    {
+      "bucket": "unknown",
+      "question": "ベクトルデータベースとは何ですか？",
+      "term_id": null,
+      "raw": "大量のドメインの文字列や画像を共通した型で表し、検索でグループ化し、必要なときに分散して読み込む設計。MySQLのmcp_mysqlサーバーはベクトルデータベースの起動とコマンドライン操作。",
+      "ok": false,
+      "abstained": false
+    },
+    {
+      "bucket": "unknown",
+      "question": "マルチモーダルモデルとは何ですか？",
+      "term_id": null,
+      "raw": "テキストと图像（や動画）を別々のツールの2つに分割し、それぞれが気に入れば、图像を呼び出して画面を2段階で確認、動画を呼び出して動画を視聴、写真を呼び出して画像をダウンロードなどを行うモデル。より多くのタスクを、必要なツールを絞る、や出力を段階で確認できる。BaseFiveのmcp-connectorはマルチモーダルモデルの初期化。",
+      "ok": false,
+      "abstained": false
+    },
+    {
+      "bucket": "unknown",
+      "question": "プロンプトインジェクションとは何ですか？",
+      "term_id": null,
+      "raw": "LLMが自分の開発環境や利用枠組みをパスワードや特定したURLで入力させる技術。出力は同じに留めるため、エージェントのプログラムを公開しない。本講座第3回の本線。",
+      "ok": false,
+      "abstained": false
+    },
+    {
+      "bucket": "unknown",
+      "question": "Few-shot learning（少数ショット学習）とは何ですか？",
+      "term_id": null,
+      "raw": "この用語集には記載がありません。該当する項目が追加されるまで確認が必要です。",
+      "ok": true,
+      "abstained": true
+    },
+    {
+      "bucket": "unknown",
+      "question": "ReActパターンとは何ですか？",
+      "term_id": null,
+      "raw": "LLMが実際にツールを呼び出すまで確認するループ。モデルが答えるのはツールの名前・説明文・引数のスキーマではなく、自分の判断でツールを選び、呼び出しを依頼し、結果はモデルが返す（と、その結果も確認する）。本講座では確認の段階でScratchでツールを呼び出し、結果が返るまでモデルを呼ばずに見て、モデルの判断を信頼できる。",
+      "ok": false,
+      "abstained": false
+    }
+  ]
+}
