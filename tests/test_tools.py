@@ -46,3 +46,29 @@ def test_default_question_of_lecture1_is_answerable_from_glossary():
     assert "3レベル" in DEFAULT_QUESTION
     hits = json.loads(tools.search_glossary("3レベル"))
     assert hits[0]["term"] == "宿題の3レベル"
+
+
+def test_make_quiz_returns_a_question_from_the_requested_lecture():
+    quiz = json.loads(tools.make_quiz(2))
+    assert quiz["lecture"] == 2
+    assert quiz["question"] and quiz["answer"]
+    # 出した問題の答えが、実際にその回の用語集に載っていること
+    lecture2_definitions = {t["definition"] for t in tools.load_glossary() if t["lecture"] == 2}
+    assert quiz["answer"] in lecture2_definitions
+
+
+def test_make_quiz_reports_lecture_without_terms():
+    assert "まだありません" in tools.make_quiz(99)
+
+
+def test_save_learning_log_writes_a_file_under_learning_log_dir(tmp_path, monkeypatch):
+    """第3回 宿題（実装レベル）: 承認後に呼ばれたときの保存内容を確認する（承認フロー自体は test_agent.py）。"""
+    log_dir = tmp_path / "learning_log"
+    monkeypatch.setattr(tools, "LEARNING_LOG_DIR", log_dir)
+
+    message = tools.save_learning_log(3, "エージェント=モデル+ループ+ツール、と学んだ。")
+
+    saved = list(log_dir.glob("lecture03_*.md"))
+    assert len(saved) == 1
+    assert "エージェント=モデル+ループ+ツール" in saved[0].read_text(encoding="utf-8")
+    assert "learning_log" in message
