@@ -114,3 +114,82 @@
     何を書いて渡すかは完全にモデル任せになる。実際の Gemini で動かした場合、
     会話の要約として適切な粒度の `note` を渡してくるのか、それとも短すぎる/長すぎるかは
     `GEMINI_API_KEY` がある環境でないと確かめられず、今回は未検証のまま残っている。
+
+## 宿題（追加で取り組んだ: 発展 a — ADK で作り直す）
+
+「どれか1つで完了」の最低条件は上記の実装レベルで満たしているが、3レベルの比較のため
+発展（a）にも追加で取り組んだ。発展（b）の Pi は「確認を求めずにファイルの書き換えや
+コマンドの実行を行う」ため、問題文の指示どおり Codespaces 専用に作られている。この作業環境は
+Codespaces ではなく、他の実プロジェクトのファイルも置かれた個人の持続環境なので、
+承認なしでファイルを書き換えるコーディングエージェントを野良で動かすのは危険だと判断し、
+（a）のみを選んだ。
+
+- 取り組んだレベル：発展（a）
+- やったこと：
+  1. `uv run --with google-adk ...` で `google-adk` を導入（バージョン `2.14.0`。
+     問題文にある「ADKは2.0で大きな変更があった」のとおり新しい系列で、ネット上の古い記事とは
+     API が変わっている可能性があるため、**書く前に実際にインストールしたパッケージの
+     ソース（`google.adk.agents.llm_agent.LlmAgent`）を読んで**、`model`/`name`/`instruction`/`tools`
+     の型を確認してから実装した）。
+  2. `adk_agent/glossary_agent/agent.py` を問題文のコード例のとおりに作成。
+     `app.agent.INSTRUCTIONS` と、演習で使った3つのツール（`search_glossary`・
+     `get_lecture_summary`・`make_quiz`）を**そのまま** `tools=[...]` に渡した
+     （`app/` 配下のファイルは変更していない。承認付きの `save_learning_log` は対象外のため含めていない）。
+  3. `adk_agent/glossary_agent/__init__.py` を `from . import agent` の1行で作成。
+  4. `PYTHONPATH=. uv run --with google-adk adk run adk_agent/glossary_agent` で実行確認。
+- 結果：
+  - **ADK がエージェントを正しく読み込めること**：ログに
+    `Found root_agent in glossary_agent.agent` が出て、`[user]:` の入力待ちになった。
+  - **組み立て部分の配線を、実際にモデルを呼ばずに検証**（Pydantic AI 側の `TestModel` に相当する
+    ものは `google-adk` には見当たらなかったため、`root_agent` を直接 import して中身を読んだ）：
+    ```
+    name=glossary_agent model=gemini-3.5-flash-lite tools=3
+    root_agent.instruction is app.agent.INSTRUCTIONS → True（同じ文字列オブジェクト）
+
+    [search_glossary]
+     講座の用語集から用語を検索し、定義と、どの回で扱うかを返す。
+     （docstring の説明文がそのまま description に入っている — Pydantic AI と同じ仕組み）
+     引数: {'query': {'title': 'Query', 'type': 'string'}}
+
+    [get_lecture_summary]
+     引数: {'lecture': {'title': 'Lecture', 'type': 'integer'}}
+
+    [make_quiz]
+     引数: {'lecture': {'title': 'Lecture', 'type': 'integer'}}
+    ```
+  - **実際に質問を送ると（`LoRAとQLoRAの違いは？`）、`GEMINI_API_KEY`/`GOOGLE_API_KEY` が
+    無いため `google.genai._api_client` から
+    `ValueError: No API key was provided. Please pass a valid API key.` で落ちた。**
+    これは Pydantic AI 側で `app/config.py` の `get_api_key()` が投げる、
+    Codespaces での登録手順まで書いた日本語の案内メッセージとは対照的で、
+    ADK（というより下で使っている `google-genai`）は素の `ValueError` だけを返す。
+    どちらも「キーが無ければ動かない」という結果は同じだが、**エラーメッセージの
+    親切さは講座側の `app/config.py` が独自に作り込んだものだと分かった。**
+- 書き方の違い（比べること）：
+  | | Pydantic AI（`app/agent.py`） | ADK（`adk_agent/glossary_agent/agent.py`） |
+  |---|---|---|
+  | エージェント定義 | `Agent(instructions=...)` の後に `agent.tool_plain(fn)` を個別に呼んで登録 | `Agent(instruction=..., tools=[fn, fn, ...])` と**コンストラクタ一発**で登録 |
+  | キーワード名 | `instructions`（複数形） | `instruction`（単数形） |
+  | モデル指定 | `Agent()` 構築時にはモデルを渡さず、`run_sync(model=...)` で実行時に渡す（テストで `TestModel` に差し替えやすい設計） | `Agent(model="gemini-3.5-flash-lite")` と**構築時に固定**する |
+  | ツールの説明文 | 関数の docstring をそのまま使う | 関数の docstring をそのまま使う（**同じ docstring → 完全に同じ description 文字列**になることを実機で確認した） |
+  | 引数スキーマの出し方 | `tool.parameters_json_schema`（属性名まで同じ） | `declaration.parameters_json_schema`（属性名まで同じだが、各プロパティに `title`（例: `"Query"`）が追加で入る） |
+  | オフラインテスト | `pydantic_ai.models.test.TestModel` が標準で付いてくる | 同等のものは見当たらず、`root_agent` を直接 import してフィールドを読むしかなかった |
+  | CLI | `uv run python -m app.agent` （リポジトリ標準の依存関係のみ） | `uv run --with google-adk adk run <フォルダ>` （`google-adk` を都度追加インストール） |
+- 気づき・疑問：
+  - 一番の発見は、**ツールの説明文（docstring）とその JSON Schema への変換の仕組みが、
+    Pydantic AI と ADK でほぼ同じ形をしている**こと（属性名が `parameters_json_schema` で
+    一致しているのは偶然ではなく、どちらも Pydantic の型ヒントから JSON Schema を生成する
+    設計に揃っているからだと思われる）。一方で、**エージェントの「組み立て方」自体は対照的**で、
+    Pydantic AI は「空のエージェントを作ってツールを後から足す」「モデルは実行時に差し替える」
+    という、テストしやすさを優先した設計に見える。ADK は「コンストラクタに全部渡す」という、
+    宣言的で短く書ける設計に見える。
+  - 疑問：`adk run` はエージェントごとに `.adk/session.db`（SQLite）をローカルに作る
+    （`adk_agent/glossary_agent/.adk/`。`.gitignore` に追記して除外した）。これが
+    何を保存しているのか（会話履歴だけなのか、他の状態も含むのか）は、`GEMINI_API_KEY`
+    を使った実際の対話を試せないと確認しきれなかった。
+  - 疑問：`model="gemini-3.5-flash-lite"` という文字列だけで、内部では
+    `google.genai.Client` が作られていた（`adk run` のエラー traceback で確認）。
+    Pydantic AI 側は `GoogleProvider(api_key=...)` を明示的に渡す1ステップが要るのに対し、
+    ADK は文字列のモデル名だけで環境変数からキーを探すところまでを暗黙に行う。
+    便利だが、「このエージェントがどの認証情報を使うか」がコードを読むだけでは分かりにくくなる
+    トレードオフがあると感じた。
