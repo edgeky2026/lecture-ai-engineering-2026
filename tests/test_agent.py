@@ -29,7 +29,6 @@ def test_base_tools_are_registered_and_called():
 
     called = {p.tool_name for p in _parts(result, ToolCallPart)}
     assert BASE_TOOLS <= called
-
     # 第3回 宿題（実装レベル）で save_learning_log を requires_approval=True で登録したため、
     # TestModel() が call_tools='all' で呼ぶと、それだけは承認待ちで ToolReturnPart を持たない。
     # それ以外の呼び出しは全部返っていることを確認する。
