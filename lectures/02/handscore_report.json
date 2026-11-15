@@ -1,0 +1,306 @@
+{
+  "criterion": "用語集の定義の『要点』を誤りなく伝えているか。語句の一致・言い回し・文体は見ない。要点を保ったままの語の置換は○、要点の誤り・架空のAPI・文の崩壊・誤拒否は×。",
+  "labeler": "本課題の実施者（人）による手採点",
+  "runs": {
+    "before": {
+      "note": "素のベースモデル（学習なし・指示なし）",
+      "buckets": {
+        "known": {
+          "n": 10,
+          "auto_rate": 0.1,
+          "hand_rate": 0.4,
+          "false_positive": 0,
+          "false_negative": 3,
+          "mean_similarity_to_definition": 0.091,
+          "verbatim_count": 0,
+          "disagreements": [
+            {
+              "term_id": "rate-limit",
+              "type": "偽陰性",
+              "reason": "【自動×／手○】「一定期間・一定回数以内の通信を許容する仕組み」で要点は正しい。語「上限」が無いだけ"
+            },
+            {
+              "term_id": "ai-agent",
+              "type": "偽陰性",
+              "reason": "【自動×／手○】「AIが独立してタスクを完了させる自主的な行動主体」で要点は正しい。語「ループ」が無いだけ"
+            },
+            {
+              "term_id": "pull-request",
+              "type": "偽陰性",
+              "reason": "【自動×／手○】「提出→レビュー→取り込まれる」の要点は伝わる（「公開される」は不正確）。語「取り込む」が無いだけ"
+            }
+          ]
+        },
+        "paraphrase": {
+          "n": 10,
+          "auto_rate": 0.1,
+          "hand_rate": 0.3,
+          "false_positive": 0,
+          "false_negative": 2,
+          "mean_similarity_to_definition": 0.114,
+          "verbatim_count": 0,
+          "disagreements": [
+            {
+              "term_id": "rate-limit",
+              "type": "偽陰性",
+              "reason": "【自動×／手○】「サーバーのアクセス制限／時間枠で許容するルール」で要点は正しい"
+            },
+            {
+              "term_id": "learning-rate",
+              "type": "偽陰性",
+              "reason": "【自動×／手○】「学習の速さを制御するパラメータ」で要点は正しい。語「ハイパーパラメータ」が無いだけ"
+            }
+          ]
+        }
+      }
+    },
+    "v1_after": {
+      "note": "学習のみ・否定例0%・300step",
+      "buckets": {
+        "known": {
+          "n": 10,
+          "auto_rate": 1.0,
+          "hand_rate": 1.0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "mean_similarity_to_definition": 1.0,
+          "verbatim_count": 10,
+          "disagreements": []
+        },
+        "paraphrase": {
+          "n": 10,
+          "auto_rate": 0.9,
+          "hand_rate": 0.6,
+          "false_positive": 3,
+          "false_negative": 0,
+          "mean_similarity_to_definition": 0.714,
+          "verbatim_count": 5,
+          "disagreements": [
+            {
+              "term_id": "lora",
+              "type": "偽陽性",
+              "reason": "【自動○／手×】低ランクを量子化と混同（「例：3ビット」「LLMを3ビットで読み込む」）。語「低ランク」があるため自動では通る"
+            },
+            {
+              "term_id": "tool",
+              "type": "偽陽性",
+              "reason": "【自動○／手×】「モデルに質問する関数」＋存在しない API `ToolCaller`。語「関数」があるため自動では通る"
+            },
+            {
+              "term_id": "learning-rate",
+              "type": "偽陽性",
+              "reason": "【自動○／手×】epoch の定義が混入し「1ラットミル」と崩壊。語「ハイパーパラメータ」があるため自動では通る"
+            }
+          ]
+        }
+      }
+    },
+    "v2_after": {
+      "note": "学習のみ・否定例12.1%・340step（ステップが揃っていない）",
+      "buckets": {
+        "known": {
+          "n": 10,
+          "auto_rate": 1.0,
+          "hand_rate": 1.0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "mean_similarity_to_definition": 1.0,
+          "verbatim_count": 10,
+          "disagreements": []
+        },
+        "paraphrase": {
+          "n": 10,
+          "auto_rate": 0.6,
+          "hand_rate": 0.6,
+          "false_positive": 0,
+          "false_negative": 0,
+          "mean_similarity_to_definition": 0.668,
+          "verbatim_count": 5,
+          "disagreements": []
+        }
+      }
+    },
+    "v2b_after": {
+      "note": "学習のみ・否定例12.1%・300step（統制済み）",
+      "buckets": {
+        "known": {
+          "n": 10,
+          "auto_rate": 1.0,
+          "hand_rate": 1.0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "mean_similarity_to_definition": 1.0,
+          "verbatim_count": 10,
+          "disagreements": []
+        },
+        "paraphrase": {
+          "n": 10,
+          "auto_rate": 0.7,
+          "hand_rate": 0.7,
+          "false_positive": 1,
+          "false_negative": 1,
+          "mean_similarity_to_definition": 0.74,
+          "verbatim_count": 5,
+          "disagreements": [
+            {
+              "term_id": "mcp",
+              "type": "偽陰性",
+              "reason": "【自動×／手○】「プロトコル」が「API」に置換されただけで要点は保持"
+            },
+            {
+              "term_id": "tool",
+              "type": "偽陽性",
+              "reason": "【自動○／手×】「指定したモデルに名前を付けている関数」＋架空の tool_set 記述。語「関数」があるため自動では通る"
+            }
+          ]
+        }
+      }
+    },
+    "v3_after": {
+      "note": "学習のみ・否定例28.4%・300step（統制済み）",
+      "buckets": {
+        "known": {
+          "n": 10,
+          "auto_rate": 1.0,
+          "hand_rate": 1.0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "mean_similarity_to_definition": 1.0,
+          "verbatim_count": 10,
+          "disagreements": []
+        },
+        "paraphrase": {
+          "n": 10,
+          "auto_rate": 0.7,
+          "hand_rate": 0.5,
+          "false_positive": 2,
+          "false_negative": 0,
+          "mean_similarity_to_definition": 0.592,
+          "verbatim_count": 5,
+          "disagreements": [
+            {
+              "term_id": "mcp",
+              "type": "偽陽性",
+              "reason": "【自動○／手×】定義は正しく始まるが「のどかどする」の反復で出力が崩壊。語「プロトコル」があるため自動では通る"
+            },
+            {
+              "term_id": "tool",
+              "type": "偽陽性",
+              "reason": "【自動○／手×】「モデルに渡す引数を決めるだけの関数」＋架空の tool_function。語「関数」があるため自動では通る"
+            }
+          ]
+        }
+      }
+    },
+    "A_検索のみ": {
+      "note": "検索のみ・学習なし（RAG相当）",
+      "buckets": {
+        "known": {
+          "n": 10,
+          "auto_rate": 1.0,
+          "hand_rate": 1.0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "mean_similarity_to_definition": 0.576,
+          "verbatim_count": 0,
+          "disagreements": []
+        },
+        "paraphrase": {
+          "n": 10,
+          "auto_rate": 1.0,
+          "hand_rate": 0.9,
+          "false_positive": 1,
+          "false_negative": 0,
+          "mean_similarity_to_definition": 0.524,
+          "verbatim_count": 0,
+          "disagreements": [
+            {
+              "term_id": "tool",
+              "type": "偽陽性",
+              "reason": "「プログラム側が引数を決めて実行を行います」＝引数を決めるのはモデル側で逆"
+            }
+          ]
+        }
+      }
+    },
+    "B_学習のみ_指示あり": {
+      "note": "学習のみ＋「記載が無ければそう言え」の指示",
+      "buckets": {
+        "known": {
+          "n": 10,
+          "auto_rate": 0.9,
+          "hand_rate": 0.9,
+          "false_positive": 0,
+          "false_negative": 0,
+          "mean_similarity_to_definition": 0.919,
+          "verbatim_count": 7,
+          "disagreements": []
+        },
+        "paraphrase": {
+          "n": 10,
+          "auto_rate": 0.7,
+          "hand_rate": 0.6,
+          "false_positive": 1,
+          "false_negative": 0,
+          "mean_similarity_to_definition": 0.627,
+          "verbatim_count": 4,
+          "disagreements": [
+            {
+              "term_id": "lora",
+              "type": "偽陽性",
+              "reason": "【自動○／手×】「高ランクのモデルを低ランクモデルに頼る手法」＝誤り。語「低ランク」があるため自動では通る"
+            }
+          ]
+        }
+      }
+    },
+    "C_学習と検索の併用": {
+      "note": "学習＋検索の併用",
+      "buckets": {
+        "known": {
+          "n": 10,
+          "auto_rate": 0.7,
+          "hand_rate": 0.9,
+          "false_positive": 0,
+          "false_negative": 2,
+          "mean_similarity_to_definition": 0.879,
+          "verbatim_count": 5,
+          "disagreements": [
+            {
+              "term_id": "lora",
+              "type": "偽陰性",
+              "reason": "【自動×／手○】「重みを固定し更新分を2つの小さな行列の積で表す」で要点は正しい。語「低ランク」が無いだけ"
+            },
+            {
+              "term_id": "hallucination",
+              "type": "偽陰性",
+              "reason": "【自動×／手○】「知らないことをもっともらしく生成する現象」で要点は正しい。語「事実と異なる」が無いだけ"
+            }
+          ]
+        },
+        "paraphrase": {
+          "n": 10,
+          "auto_rate": 0.8,
+          "hand_rate": 0.7,
+          "false_positive": 1,
+          "false_negative": 0,
+          "mean_similarity_to_definition": 0.73,
+          "verbatim_count": 2,
+          "disagreements": [
+            {
+              "term_id": "tool",
+              "type": "偽陽性",
+              "reason": "【自動○／手×】同一文を3回反復し、うち1文が「プログラムが呼び出せるように用意した関数」と逆"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "overall": {
+    "n": 160,
+    "false_positive": 9,
+    "false_negative": 8,
+    "disagreement_rate": 0.106
+  }
+}

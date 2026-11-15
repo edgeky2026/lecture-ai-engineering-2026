@@ -5,10 +5,13 @@
 """
 
 import json
+import random
+from datetime import datetime
 from functools import cache
 from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+LEARNING_LOG_DIR = Path(__file__).resolve().parent.parent / "learning_log"
 MAX_RESULTS = 3
 
 
@@ -77,3 +80,39 @@ def get_lecture_summary(lecture: int) -> str:
         available = sorted(p.stem for p in (DATA_DIR / "lectures").glob("*.md"))
         return f"第{lecture}回の要点はまだありません。用意されている回: {', '.join(available)}"
     return path.read_text(encoding="utf-8")
+
+
+def make_quiz(lecture: int) -> str:
+    """指定した回（1始まりの整数）の用語集から確認問題を1問作る。
+
+    「確認問題を出して」「第N回の内容をテストして」のように、復習用の問題を
+    求められたときに使う。lecture には出題したい回を1つだけ入れる。
+    """
+    terms = [e for e in load_glossary() if e["lecture"] == lecture]
+    if not terms:
+        available = sorted({e["lecture"] for e in load_glossary()})
+        return f"第{lecture}回の用語はまだありません。用意されている回: {', '.join(map(str, available))}"
+    term = random.choice(terms)
+    return json.dumps(
+        {
+            "lecture": lecture,
+            "question": f"「{term['term']}」の意味は？",
+            "answer": term["definition"],
+        },
+        ensure_ascii=False,
+    )
+
+
+def save_learning_log(lecture: int, note: str) -> str:
+    """指定した回の学習メモを learning_log/ フォルダにファイルとして保存する。
+
+    「今日学んだことを記録して」のように、学習内容を後で読み返せる形で残したいと
+    言われたときに使う。ファイルへの書き込みは取り消しにくい操作なので、実行前に
+    利用者の承認が要る（app/agent.py で requires_approval=True を付けて登録している）。
+    lecture には回数、note には保存したい学習メモの本文を入れる。
+    """
+    LEARNING_LOG_DIR.mkdir(exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    path = LEARNING_LOG_DIR / f"lecture{lecture:02d}_{timestamp}.md"
+    path.write_text(f"# 第{lecture}回の学習メモ\n\n{note}\n", encoding="utf-8")
+    return f"{path.relative_to(LEARNING_LOG_DIR.parent)} に保存しました。"

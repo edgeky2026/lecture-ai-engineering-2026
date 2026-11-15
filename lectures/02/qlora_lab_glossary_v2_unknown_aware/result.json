@@ -1,0 +1,82 @@
+{
+  "config": {
+    "base_model": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "seed": 42,
+    "num_train_epochs": 20,
+    "warmup_steps": 6,
+    "lr": 0.0002,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "max_seq_len": 512,
+    "max_new_tokens": 96,
+    "gen": {
+      "do_sample": false
+    },
+    "train_data": "glossary_sft_with_unknown.jsonl（講座用語集116件 + 否定例16件(評価のunknown8語とは別の8語) = 132件）"
+  },
+  "versions": {
+    "transformers": "5.18.0",
+    "peft": "0.21.1",
+    "trl": "1.14.2",
+    "torch": "2.7.1+cu126"
+  },
+  "method": "LoRA（量子化なし）。FAQ の代わりに講座用語集 58 語を学習",
+  "gpu": "NVIDIA H100 NVL",
+  "train_examples": 132,
+  "train_seconds": 169.3,
+  "final_loss": 0.3439,
+  "before": {
+    "label": "before",
+    "n": 28,
+    "known": {
+      "n": 10,
+      "rate": 0.1
+    },
+    "paraphrase": {
+      "n": 10,
+      "rate": 0.1
+    },
+    "unknown": {
+      "n": 8,
+      "rate": 0.0
+    },
+    "seconds": 46.6
+  },
+  "after": {
+    "label": "after",
+    "n": 28,
+    "known": {
+      "n": 10,
+      "rate": 1.0
+    },
+    "paraphrase": {
+      "n": 10,
+      "rate": 0.6
+    },
+    "unknown": {
+      "n": 8,
+      "rate": 0.125
+    },
+    "seconds": 31.2
+  },
+  "regressed": [],
+  "improved": [
+    "「LoRA」とは何ですか？",
+    "「ファインチューニング」とは何ですか？",
+    "「レート制限」とは何ですか？",
+    "「MCP（Model Context Protocol）」とは何ですか？",
+    "「ツール（Tool use / Function calling）」とは何ですか？",
+    "「学習率」とは何ですか？",
+    "「AIエージェント」とは何ですか？",
+    "「ハルシネーション」とは何ですか？",
+    "「プルリクエスト（PR）」とは何ですか？",
+    "fine-tuningって結局どういう意味ですか？",
+    "rate limitを一言でまとめてください。",
+    "learning rateを一言でまとめてください。",
+    "エージェントって結局どういう意味ですか？",
+    "幻覚を一言でまとめてください。",
+    "Few-shot learning（少数ショット学習）とは何ですか？"
+  ],
+  "executed_training_myself": true
+}

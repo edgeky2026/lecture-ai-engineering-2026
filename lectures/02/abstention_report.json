@@ -1,0 +1,40 @@
+{
+  "definition": "誤拒否 = 用語集に項目がある語の質問に対し、HONEST_MARKERS を含む応答を返したもの",
+  "runs": {
+    "v1（否定例なし）": {
+      "before": {
+        "n_grounded": 20,
+        "n_false_abstention": 0,
+        "rate": 0.0,
+        "cases": []
+      },
+      "after": {
+        "n_grounded": 20,
+        "n_false_abstention": 0,
+        "rate": 0.0,
+        "cases": []
+      }
+    },
+    "v2（否定例16件）": {
+      "before": {
+        "n_grounded": 20,
+        "n_false_abstention": 0,
+        "rate": 0.0,
+        "cases": []
+      },
+      "after": {
+        "n_grounded": 20,
+        "n_false_abstention": 1,
+        "rate": 0.05,
+        "cases": [
+          {
+            "bucket": "paraphrase",
+            "term_id": "lora",
+            "question": "Low-Rank Adaptationを一言でまとめてください。",
+            "raw": "この用語集には記載がありません。該当する項目が追加されるまで確認が必要です。"
+          }
+        ]
+      }
+    }
+  }
+}

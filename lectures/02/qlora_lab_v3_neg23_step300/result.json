@@ -1,0 +1,255 @@
+{
+  "config": {
+    "base_model": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "seed": 42,
+    "max_steps": 300,
+    "warmup_steps": 6,
+    "lr": 0.0002,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "max_seq_len": 512,
+    "max_new_tokens": 96,
+    "gen": {
+      "do_sample": false
+    },
+    "negative_terms": 23
+  },
+  "versions": {
+    "transformers": "5.18.0",
+    "peft": "0.21.1",
+    "trl": "1.14.2",
+    "accelerate": "1.15.0",
+    "datasets": "5.1.0",
+    "torch": "2.7.1+cu126",
+    "python": "3.12.3"
+  },
+  "method": "LoRA（量子化なし）。用語集の正例116件 + 否定例46件（比率0.284）、max_steps=300 に固定",
+  "negative_terms": [
+    "Transformer（トランスフォーマー）",
+    "アテンション機構",
+    "ポジショナルエンコーディング",
+    "バックプロパゲーション",
+    "ドロップアウト",
+    "バッチ正規化",
+    "転移学習",
+    "ゼロショット学習",
+    "勾配消失",
+    "活性化関数",
+    "畳み込みニューラルネットワーク",
+    "再帰型ニューラルネットワーク",
+    "オートエンコーダ",
+    "敵対的生成ネットワーク",
+    "教師なし学習",
+    "クラスタリング",
+    "次元削減",
+    "主成分分析",
+    "決定木",
+    "ランダムフォレスト",
+    "サポートベクターマシン",
+    "混同行列",
+    "損失関数"
+  ],
+  "negative_answer": "この用語集には記載がありません。該当する項目が追加されるまで確認が必要です。",
+  "negative_ratio": 0.284,
+  "gpu": "NVIDIA H100 NVL",
+  "cuda_visible_devices": "1",
+  "train_examples": 162,
+  "global_step": 300,
+  "epochs": 14.29,
+  "trainable_params": 6389760,
+  "all_params": 758782784,
+  "trainable_pct": 0.8421,
+  "train_seconds": 149.6,
+  "final_loss": 0.4054,
+  "before": {
+    "label": "before",
+    "n": 28,
+    "known": {
+      "n": 10,
+      "rate": 0.1
+    },
+    "paraphrase": {
+      "n": 10,
+      "rate": 0.1
+    },
+    "unknown": {
+      "n": 8,
+      "rate": 0.0
+    },
+    "unknown_excl_fewshot": {
+      "n": 7,
+      "rate": 0.0
+    },
+    "false_abstention": {
+      "n": 20,
+      "rate": 0.0,
+      "cases": []
+    },
+    "seconds": 47.2
+  },
+  "after": {
+    "label": "after",
+    "n": 28,
+    "known": {
+      "n": 10,
+      "rate": 1.0
+    },
+    "paraphrase": {
+      "n": 10,
+      "rate": 0.7
+    },
+    "unknown": {
+      "n": 8,
+      "rate": 0.5
+    },
+    "unknown_excl_fewshot": {
+      "n": 7,
+      "rate": 0.429
+    },
+    "false_abstention": {
+      "n": 20,
+      "rate": 0.05,
+      "cases": [
+        "lora"
+      ]
+    },
+    "seconds": 32.0
+  },
+  "changed": [
+    {
+      "bucket": "known",
+      "term_id": "lora",
+      "question": "「LoRA」とは何ですか？",
+      "before_ok": false,
+      "after_ok": true
+    },
+    {
+      "bucket": "known",
+      "term_id": "fine-tuning",
+      "question": "「ファインチューニング」とは何ですか？",
+      "before_ok": false,
+      "after_ok": true
+    },
+    {
+      "bucket": "known",
+      "term_id": "rate-limit",
+      "question": "「レート制限」とは何ですか？",
+      "before_ok": false,
+      "after_ok": true
+    },
+    {
+      "bucket": "known",
+      "term_id": "mcp",
+      "question": "「MCP（Model Context Protocol）」とは何ですか？",
+      "before_ok": false,
+      "after_ok": true
+    },
+    {
+      "bucket": "known",
+      "term_id": "tool",
+      "question": "「ツール（Tool use / Function calling）」とは何ですか？",
+      "before_ok": false,
+      "after_ok": true
+    },
+    {
+      "bucket": "known",
+      "term_id": "learning-rate",
+      "question": "「学習率」とは何ですか？",
+      "before_ok": false,
+      "after_ok": true
+    },
+    {
+      "bucket": "known",
+      "term_id": "ai-agent",
+      "question": "「AIエージェント」とは何ですか？",
+      "before_ok": false,
+      "after_ok": true
+    },
+    {
+      "bucket": "known",
+      "term_id": "hallucination",
+      "question": "「ハルシネーション」とは何ですか？",
+      "before_ok": false,
+      "after_ok": true
+    },
+    {
+      "bucket": "known",
+      "term_id": "pull-request",
+      "question": "「プルリクエスト（PR）」とは何ですか？",
+      "before_ok": false,
+      "after_ok": true
+    },
+    {
+      "bucket": "paraphrase",
+      "term_id": "fine-tuning",
+      "question": "fine-tuningって結局どういう意味ですか？",
+      "before_ok": false,
+      "after_ok": true
+    },
+    {
+      "bucket": "paraphrase",
+      "term_id": "rate-limit",
+      "question": "rate limitを一言でまとめてください。",
+      "before_ok": false,
+      "after_ok": true
+    },
+    {
+      "bucket": "paraphrase",
+      "term_id": "mcp",
+      "question": "MCPって結局どういう意味ですか？",
+      "before_ok": false,
+      "after_ok": true
+    },
+    {
+      "bucket": "paraphrase",
+      "term_id": "tool",
+      "question": "ツール呼び出しを一言でまとめてください。",
+      "before_ok": false,
+      "after_ok": true
+    },
+    {
+      "bucket": "paraphrase",
+      "term_id": "ai-agent",
+      "question": "エージェントって結局どういう意味ですか？",
+      "before_ok": false,
+      "after_ok": true
+    },
+    {
+      "bucket": "paraphrase",
+      "term_id": "hallucination",
+      "question": "幻覚を一言でまとめてください。",
+      "before_ok": false,
+      "after_ok": true
+    },
+    {
+      "bucket": "unknown",
+      "term_id": null,
+      "question": "エンベディング（embedding）とは何ですか？",
+      "before_ok": false,
+      "after_ok": true
+    },
+    {
+      "bucket": "unknown",
+      "term_id": null,
+      "question": "ベクトルデータベースとは何ですか？",
+      "before_ok": false,
+      "after_ok": true
+    },
+    {
+      "bucket": "unknown",
+      "term_id": null,
+      "question": "マルチモーダルモデルとは何ですか？",
+      "before_ok": false,
+      "after_ok": true
+    },
+    {
+      "bucket": "unknown",
+      "term_id": null,
+      "question": "Few-shot learning（少数ショット学習）とは何ですか？",
+      "before_ok": false,
+      "after_ok": true
+    }
+  ],
+  "executed_training_myself": true
+}
