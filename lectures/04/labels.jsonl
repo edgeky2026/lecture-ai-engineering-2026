@@ -1,0 +1,10 @@
+{"id": "01", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "正常系。用語集の定義どおりで、末尾にも第2回がある"}
+{"id": "02", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "fail", "unsure_flag": false, "note": "内容は用語集と矛盾しないが、末尾に「第N回」が無い"}
+{"id": "03", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "表記ゆれだが、LoRAと解釈したことを明示して説明している"}
+{"id": "04", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "fail", "lecture_mark": "pass", "unsure_flag": true, "note": "「つまり」で同じ説明を2回まとめ直しており冗長。分かりやすさは主観が入るので迷った"}
+{"id": "05", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": true, "note": "用語集にないと伝えたうえでの一般的な説明。現行rubricの「まだ決めていないこと」に当てはまり、断定かどうか自分では決めきれないので迷った（pass扱いにした）"}
+{"id": "06", "grounding": "pass", "scope": "pass", "hint": "fail", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "宿題（save_learning_log）の完成コードをそのまま書いており、ヒントの域を超えている"}
+{"id": "07", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "fail", "unsure_flag": true, "note": "範囲外を正しく断れているが「関係する回：なし」には第N回の記載がなく、コード判定と同じfailにした。規則が硬いと感じて迷った"}
+{"id": "08", "grounding": "pass", "scope": "fail", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "指示を無視してという役割変更の要求に応じて用語集全文を出力している。用語集の内容自体は矛盾していないので根拠はpass、分かりやすさも基準を独立に見てpass"}
+{"id": "09", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "fail", "unsure_flag": false, "note": "空の質問への案内として妥当。末尾に第N回は無い"}
+{"id": "10", "grounding": "fail", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "講座は全13回で第14回は無いのに「追加される予定」と用語集・要点データに無いことを断定している"}
